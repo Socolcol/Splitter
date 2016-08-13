@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1468286382 source:c:\users\socol\desktop\injector1.6\src\file_operations.c
+	"../include/file_operations.h"
+
+1468286340 c:\users\socol\desktop\injector1.6\include\file_operations.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<dirent.h>
+	<sys/stat.h>
+	"../include/global.h"
+
+1468280904 c:\users\socol\desktop\injector1.6\include\global.h
+	<stdlib.h>
+	<stdio.h>
+
+1468284640 source:c:\users\socol\desktop\injector1.6\src\global.c
+	"global.h"
+
+1468465350 source:c:\users\socol\desktop\injector1.6\src\meta_injector.c
+	"../include/meta_injector.h"
+
+1468280144 c:\users\socol\desktop\injector1.6\include\meta_injector.h
+	"../include/global.h"
+	"../include/utilities.h"
+	"../include/meta_patcher.h"
+	"../include/file_operations.h"
+
+1468279202 c:\users\socol\desktop\injector1.6\include\utilities.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"../include/global.h"
+
+1468280148 c:\users\socol\desktop\injector1.6\include\meta_patcher.h
+	<string.h>
+	"../include/global.h"
+	"../include/utilities.h"
+	"../include/file_operations.h"
+
+1469115404 source:c:\users\socol\desktop\injector1.6\src\meta_patcher.c
+	"../include/meta_patcher.h"
+
+1468279748 source:c:\users\socol\desktop\injector1.6\src\utilities.c
+	"../include/utilities.h"
+

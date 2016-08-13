@@ -1,0 +1,235 @@
+<!-- 
+========================================================================================================
+블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더블레이더
+=========================================  블레이더  Parameter 정보   =============================================
+========================================================================================================
+-->
+<!-- ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆-->
+<!--  서비스 이후 해당 파일은 함부로 변경하면 안됩니다.  변경하실 내용이 있으며 프로그램 팀에 말씀해주세요  --> 
+<!-- ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆-->
+
+<!-- 본 관련 컴포넌트 추가와  단위 변경 시 코드 수정도 필요함. -->
+<!-- 본 parameter 지원 컴포넌트 & 적용 단위 ( 실제값 / 단계 ) -->
+<!-- 	얼굴 	[ translation :  5.0cm / 100단계 ]		[ Rotation : 30도 / 125단계 ] 	[ Scale  Min : 0.5배 / 20단계   Max : 2.0배 / 20단계 ]-->
+<!-- 	몸	 	[ translation :  20.0cm / 100단계 ] 	[ Scale Min : 0.5배 / 20단계  	Scale Max : 2.0배 / 20단계 ] -->
+
+<BoneParam>
+	<ParamDesc Index="0" Min="-0.10 -0.30 -0.30" Max="0.10 0.30 0.40" Default="0.00 0.00 0.00" BoneName="B_jaw_down_all" PartName="base_head" Component="T"/>
+	<ParamDesc Index="1" Min="-2.88 -2.88 -2.88" Max="2.88 2.88 2.88" Default="0.00 0.00 0.00" BoneName="B_jaw_down_all" PartName="base_head" Component="R"/>
+	<ParamDesc Index="2" Min="0.82 0.82 0.82" Max="1.10 1.10 1.10" Default="1.00 1.00 1.00" BoneName="B_jaw_down_all" PartName="base_head" Component="S"/>
+	<ParamDesc Index="3" Min="-0.80 -0.80 -0.80" Max="0.80 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_jaw" PartName="base_head" Component="T"/>
+	<ParamDesc Index="4" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_jaw" PartName="base_head" Component="R"/>
+	<ParamDesc Index="5" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_jaw" PartName="base_head" Component="S"/>
+	<ParamDesc Index="6" Min="-0.80 -0.80 -1.30" Max="0.80 0.80 0.80" Default="0 0 0" BoneName="B_cheek_left_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="7" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_left_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="8" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_left_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="9" Min="-0.80 -0.80 -1.30" Max="0.80 1.40 0.80" Default="0 0 0" BoneName="B_cheek_right_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="10" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_right_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="11" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_right_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="12" Min="-0.80 -0.80 -1.50" Max="0.80 0.80 1.50" Default="0.00 0.00 0.00" BoneName="B_cheek_left" PartName="base_head" Component="T"/>
+	<ParamDesc Index="13" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_left" PartName="base_head" Component="R"/>
+	<ParamDesc Index="14" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_left" PartName="base_head" Component="S"/>
+	<ParamDesc Index="15" Min="-0.80 -0.80 -1.50" Max="0.80 0.80 1.50" Default="0.00 0.00 0.00" BoneName="B_cheek_right" PartName="base_head" Component="T"/>
+	<ParamDesc Index="16" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_right" PartName="base_head" Component="R"/>
+	<ParamDesc Index="17" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_right" PartName="base_head" Component="S"/>
+	<ParamDesc Index="18" Min="-1.20 -0.60 -0.60" Max="1.50 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_cheek_left_Second" PartName="base_head" Component="T"/>
+	<ParamDesc Index="19" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_left_Second" PartName="base_head" Component="R"/>
+	<ParamDesc Index="20" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_left_Second" PartName="base_head" Component="S"/>
+	<ParamDesc Index="21" Min="-1.20 -0.60 -0.60" Max="1.50 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_cheek_right_Second" PartName="base_head" Component="T"/>
+	<ParamDesc Index="22" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_right_Second" PartName="base_head" Component="R"/>
+	<ParamDesc Index="23" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_right_Second" PartName="base_head" Component="S"/>
+	<ParamDesc Index="24" Min="-4.00 -4.00 -0.80" Max="0.80 0.80 3.40" Default="0.00 0.00 0.00" BoneName="B_ear_left_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="25" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_ear_left_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="26" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_ear_left_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="27" Min="-0.80 -0.80 -0.80" Max="4.00 4.00 3.40" Default="0.00 0.00 0.00" BoneName="B_ear_right_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="28" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_ear_right_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="29" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_ear_right_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="30" Min="-1.15 0.00 -1.50" Max="1.40 0.20 1.50" Default="0.00 0.00 0.00" BoneName="B_ear_left_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="31" Min="0.00 -14.88 0.00" Max="0.00 14.88 0.00" Default="0.00 0.00 0.00" BoneName="B_ear_left_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="32" Min="0.50 1.00 0.50" Max="2.00 1.00 2.00" Default="1.00 1.00 1.00" BoneName="B_ear_left_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="33" Min="-0.60 -0.60 -0.40" Max="0.60 0.60 0.40" Default="0 0 0" BoneName="B_eyebrow_mid_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="34" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eyebrow_mid_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="35" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eyebrow_mid_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="36" Min="-0.80 -0.80 -2.40" Max="0.80 0.80 2.40" Default="0.00 0.00 0.00" BoneName="B_eyebrow_left_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="37" Min="-29.76 -29.76 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eyebrow_left_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="38" Min="0.70 0.50 0.70" Max="1.25 1.70 1.25" Default="1.00 1.00 1.00" BoneName="B_eyebrow_left_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="39" Min="-0.80 -0.80 -2.80" Max="0.80 0.80 2.80" Default="0.00 0.00 0.00" BoneName="B_eyebrow_right_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="40" Min="-29.76 -29.76 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eyebrow_right_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="41" Min="0.70 0.50 0.70" Max="1.25 1.70 1.25" Default="1.00 1.00 1.00" BoneName="B_eyebrow_right_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="42" Min="-0.60 -0.60 -1.80" Max="0.60 0.60 1.80" Default="0.00 0.00 0.00" BoneName="B_eyebrow_mid_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="43" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eyebrow_mid_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="44" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eyebrow_mid_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="45" Min="-0.60 0.00 -2.50" Max="1.30 1.30 2.50" Default="0.00 0.00 0.00" BoneName="B_eyebrow_left_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="46" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eyebrow_left_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="47" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eyebrow_left_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="48" Min="-0.60 -0.60 -2.50" Max="0.60 0.60 2.50" Default="0.00 0.00 0.00" BoneName="B_eyebrow_right_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="49" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eyebrow_right_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="50" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eyebrow_right_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="51" Min="0.00 -0.30 -0.30" Max="0.00 0.30 0.30" Default="0.00 0.00 0.00" BoneName="B_eye_left_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="52" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_left_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="53" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_left_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="54" Min="0.00 -0.30 -0.30" Max="0.00 0.30 0.30" Default="0.00 0.00 0.00" BoneName="B_eye_right_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="55" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_right_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="56" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_right_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="57" Min="0.00 -0.80 -0.60" Max="0.00 0.80 1.40" Default="0.00 0.00 0.00" BoneName="B_eye_left_right" PartName="base_head" Component="T"/>
+	<ParamDesc Index="58" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_left_right" PartName="base_head" Component="R"/>
+	<ParamDesc Index="59" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_left_right" PartName="base_head" Component="S"/>
+	<ParamDesc Index="60" Min="0.00 -0.10 -0.40" Max="0.00 0.60 0.60" Default="0.00 0.00 0.00" BoneName="B_eye_right_right" PartName="base_head" Component="T"/>
+	<ParamDesc Index="61" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_right_right" PartName="base_head" Component="R"/>
+	<ParamDesc Index="62" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_right_right" PartName="base_head" Component="S"/>
+	<ParamDesc Index="63" Min="0.00 -0.60 -0.60" Max="0.00 0.60 0.60" Default="0.00 0.00 0.00" BoneName="B_eye_left_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="64" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_left_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="65" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_left_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="66" Min="0.00 -0.60 -0.60" Max="0.00 0.60 0.60" Default="0.00 0.00 0.00" BoneName="B_eye_right_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="67" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_right_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="68" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_right_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="69" Min="0.00 -0.60 -0.40" Max="0.00 0.00 0.60" Default="0.00 0.00 0.00" BoneName="B_eye_left_left" PartName="base_head" Component="T"/>
+	<ParamDesc Index="70" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_left_left" PartName="base_head" Component="R"/>
+	<ParamDesc Index="71" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_left_left" PartName="base_head" Component="S"/>
+	<ParamDesc Index="72" Min="0.00 -0.60 -0.60" Max="0.00 0.60 1.40" Default="0.00 0.00 0.00" BoneName="B_eye_right_left" PartName="base_head" Component="T"/>
+	<ParamDesc Index="73" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_right_left" PartName="base_head" Component="R"/>
+	<ParamDesc Index="74" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_eye_right_left" PartName="base_head" Component="S"/>
+	<ParamDesc Index="75" Min="0.00 -0.10 -0.15" Max="0.00 0.15 0.10" Default="0.00 0.00 0.00" BoneName="B_eye_left" PartName="base_head" Component="T"/>
+	<ParamDesc Index="76" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_left" PartName="base_head" Component="R"/>
+	<ParamDesc Index="77" Min="0.70 0.70 0.70" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_eye_left" PartName="base_head" Component="S"/>
+	<ParamDesc Index="78" Min="0.00 -0.10 -0.15" Max="0.00 0.15 0.10" Default="0.00 0.00 0.00" BoneName="B_eye_right" PartName="base_head" Component="T"/>
+	<ParamDesc Index="79" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_eye_right" PartName="base_head" Component="R"/>
+	<ParamDesc Index="80" Min="0.70 0.70 0.70" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_eye_right" PartName="base_head" Component="S"/>
+	<ParamDesc Index="81" Min="-0.80 -1.40 -0.80" Max="0.60 0.40 0.60" Default="0.00 0.00 0.00" BoneName="B_cheek_left_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="82" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_left_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="83" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_left_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="84" Min="-0.80 -0.60 -0.80" Max="0.60 1.20 0.60" Default="0.00 0.00 0.00" BoneName="B_cheek_right_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="85" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_cheek_right_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="86" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_cheek_right_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="87" Min="-1.80 -1.80 -1.80" Max="0.80 1.90 1.90" Default="0.00 0.00 0.00" BoneName="B_laughlines_leftup" PartName="base_head" Component="T"/>
+	<ParamDesc Index="88" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_laughlines_leftup" PartName="base_head" Component="R"/>
+	<ParamDesc Index="89" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_laughlines_leftup" PartName="base_head" Component="S"/>
+	<ParamDesc Index="90" Min="-1.90 -1.90 -1.90" Max="0.80 1.90 1.90" Default="0.00 0.00 0.00" BoneName="B_laughlines_rightup" PartName="base_head" Component="T"/>
+	<ParamDesc Index="91" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_laughlines_rightup" PartName="base_head" Component="R"/>
+	<ParamDesc Index="92" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_laughlines_rightup" PartName="base_head" Component="S"/>
+	<ParamDesc Index="93" Min="-0.60 -0.60 -0.60" Max="0.60 0.60 0.60" Default="0.00 0.00 0.00" BoneName="B_nose_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="94" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_nose_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="95" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_nose_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="96" Min="-0.80 -0.80 -0.80" Max="0.80 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_laughlines_left" PartName="base_head" Component="T"/>
+	<ParamDesc Index="97" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_laughlines_left" PartName="base_head" Component="R"/>
+	<ParamDesc Index="98" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_laughlines_left" PartName="base_head" Component="S"/>
+	<ParamDesc Index="99" Min="-0.80 -0.80 -0.80" Max="0.80 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_laughlines_right" PartName="base_head" Component="T"/>
+	<ParamDesc Index="100" Min="-4.80 -4.80 -4.80" Max="4.80 4.80 4.80" Default="0.00 0.00 0.00" BoneName="B_laughlines_right" PartName="base_head" Component="R"/>
+	<ParamDesc Index="101" Min="0.95 0.95 0.95" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="B_laughlines_right" PartName="base_head" Component="S"/>
+	<ParamDesc Index="102" Min="-0.60 -0.60 -0.60" Max="0.60 0.60 0.60" Default="0.00 0.00 0.00" BoneName="B_nose_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="103" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_nose_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="104" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_nose_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="105" Min="-0.80 -0.80 -0.80" Max="0.80 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_lip_mid_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="106" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_mid_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="107" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_mid_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="108" Min="-0.80 -0.80 -0.80" Max="0.80 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_lip_left_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="109" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_left_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="110" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_left_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="111" Min="-0.80 -0.80 -0.80" Max="0.80 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_lip_right_up" PartName="base_head" Component="T"/>
+	<ParamDesc Index="112" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_right_up" PartName="base_head" Component="R"/>
+	<ParamDesc Index="113" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_right_up" PartName="base_head" Component="S"/>
+	<ParamDesc Index="114" Min="-1.90 -0.80 -0.60" Max="1.90 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_lip_left_tail" PartName="base_head" Component="T"/>
+	<ParamDesc Index="115" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_left_tail" PartName="base_head" Component="R"/>
+	<ParamDesc Index="116" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_left_tail" PartName="base_head" Component="S"/>
+	<ParamDesc Index="117" Min="-1.90 -0.80 -0.60" Max="1.90 0.80 0.80" Default="0.00 0.00 0.00" BoneName="B_lip_right_tail" PartName="base_head" Component="T"/>
+	<ParamDesc Index="118" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_right_tail" PartName="base_head" Component="R"/>
+	<ParamDesc Index="119" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_right_tail" PartName="base_head" Component="S"/>
+	<ParamDesc Index="120" Min="-0.60 -0.60 -0.60" Max="0.60 0.60 0.60" Default="0.00 0.00 0.00" BoneName="B_lip_left_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="121" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_left_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="122" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_left_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="123" Min="-0.60 -0.60 -0.60" Max="0.60 0.60 0.60" Default="0.00 0.00 0.00" BoneName="B_lip_right_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="124" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_right_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="125" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_right_down" PartName="base_head" Component="S"/>
+	<ParamDesc Index="126" Min="-0.20 -0.20 -0.20" Max="0.20 0.20 0.20" Default="0.00 0.00 0.00" BoneName="B_lip_mid_down" PartName="base_head" Component="T"/>
+	<ParamDesc Index="127" Min="-14.88 -14.88 -14.88" Max="14.88 14.88 14.88" Default="0.00 0.00 0.00" BoneName="B_lip_mid_down" PartName="base_head" Component="R"/>
+	<ParamDesc Index="128" Min="0.70 0.70 0.70" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="B_lip_mid_down" PartName="base_head" Component="S"/>
+	
+	
+	<ParamDesc Index="129" Min="0.00 -20.00 0.00" Max="0.00 20.00 0.00" Default="0.00 0.00 0.00" BoneName="Bip01" PartName="base_basebody" Component="T"/>
+	<ParamDesc Index="130" Min="0.90 0.88 0.88" Max="1.10 1.35 1.35" Default="1.10 0.88 1.00" BoneName="Bip01 L Calf" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="131" Min="0.90 0.88 0.88" Max="1.10 1.35 1.35" Default="1.10 0.88 1.00" BoneName="Bip01 R Calf" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="132" Min="0.90 0.88 0.88" Max="1.10 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 L Thigh" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="133" Min="0.90 0.88 0.88" Max="1.10 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 R Thigh" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="134" Min="0.90 0.90 0.90" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="Bip01 L Foot" PartName="base_basebody" Component="S" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="135" Min="0.90 0.90 0.90" Max="1.25 1.25 1.25" Default="1.00 1.00 1.00" BoneName="Bip01 R Foot" PartName="base_basebody" Component="S" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="136" Min="0.60 0.90 0.80" Max="1.10 1.35 1.35" Default="0.70 1.00 0.90" BoneName="Bip01 Neck01" PartName="base_basebody" Component="S"/>
+	<ParamDesc Index="137" Min="0.90 0.90 0.90" Max="1.20 1.10 1.20" Default="1.00 1.00 1.00" BoneName="Bip01 Pelvis" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="138" Min="0.90 0.90 0.90" Max="1.10 1.20 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 Spine" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="139" Min="0.90 0.90 0.90" Max="1.10 1.20 1.35" Default="1.00 0.90 1.00" BoneName="Bip01 Spine1" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="140" Min="0.90 0.90 0.90" Max="1.10 1.20 1.20" Default="1.00 1.00 1.00" BoneName="Bip01 Spine2" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="141" Min="0.90 0.90 0.90" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="Bip01 L Hip" PartName="base_basebody" Component="S" WeightAxis01="Y" WeightAxis02="Z" WeightAxis03="X"/>
+	<ParamDesc Index="142" Min="0.90 0.90 0.90" Max="1.00 1.00 1.00" Default="1.00 1.00 1.00" BoneName="Bip01 R Hip" PartName="base_basebody" Component="S" WeightAxis01="Y" WeightAxis02="Z" WeightAxis03="X"/>
+	<ParamDesc Index="143" Min="0.70 0.70 0.70" Max="5.25 5.25 5.25" Default="1.00 1.00 1.00" BoneName="Bip01 L Breast" PartName="base_basebody" Component="S" WeightAxis01="X" WeightAxis02="Y" WeightAxis03="Z"/>
+	<ParamDesc Index="144" Min="0.70 0.70 0.70" Max="5.25 5.25 5.25" Default="1.00 1.00 1.00" BoneName="Bip01 R Breast" PartName="base_basebody" Component="S" WeightAxis01="X" WeightAxis02="Y" WeightAxis03="Z"/>
+	<ParamDesc Index="145" Min="0.90 0.90 0.90" Max="1.25 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 L Clavicle" PartName="base_basebody" Component="S" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="146" Min="0.90 0.90 0.90" Max="1.25 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 R Clavicle" PartName="base_basebody" Component="S" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="147" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="0.90 0.93 0.93 " BoneName="Bip01 L UpperArm" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="148" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="0.90 0.93 0.93" BoneName="Bip01 R UpperArm" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="149" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="0.96 0.93 0.93" BoneName="Bip01 L Forearm" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="150" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="0.96 0.93 0.93" BoneName="Bip01 R Forearm" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="151" Min="0.80 0.80 0.80" Max="1.35 1.35 1.35" Default="0.90 0.90 0.90" BoneName="Bip01 R Hand" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="152" Min="0.90 0.90 0.90" Max="1.35 1.35 1.35" Default="0.90 0.90 0.90" BoneName="Bip01 L Hand" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="153" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 LUpArmTwist1" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="154" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 RUpArmTwist1" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="155" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 LUpArmTwist" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	<ParamDesc Index="156" Min="0.90 0.90 0.90" Max="1.10 1.35 1.35" Default="1.00 1.00 1.00" BoneName="Bip01 RUpArmTwist" PartName="base_basebody" Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>
+	
+	
+	<ParamDesc Index="157" Min="-0.10 -0.30 -0.30" Max="0.10 0.30 0.40" Default="0.00 0.00 0.00" BoneName="B_jaw_up_all" PartName="base_head" Component="T"/>
+	<ParamDesc Index="158" Min="-2.88 -2.88 -2.88" Max="2.88 2.88 2.88" Default="0.00 0.00 0.00" BoneName="B_jaw_up_all" PartName="base_head" Component="R"/>
+	<ParamDesc Index="159" Min="0.82 0.82 0.82" Max="1.20 1.20 1.20" Default="1.00 1.00 1.00" BoneName="B_jaw_up_all" PartName="base_head" Component="S"/>
+	<ParamDesc Index="160" Min="-0.10 -0.30 -0.30" Max="0.10 0.30 0.40" Default="0.00 0.00 0.00" BoneName="B_Tongue" PartName="base_head" Component="T"/>
+	<ParamDesc Index="161" Min="-2.88 -2.88 -2.88" Max="2.88 2.88 2.88" Default="0.00 0.00 0.00" BoneName="B_Tongue" PartName="base_head" Component="R"/>
+	<ParamDesc Index="162" Min="0.62 0.62 0.62" Max="1.20 1.20 1.20" Default="1.00 1.00 1.00" BoneName="B_Tongue" PartName="base_head" Component="S"/>
+	
+	
+	
+	<ParamDesc Index="163" Min="-2.00 -0.50 -2.00" Max="1.00 2.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_00" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="164" Min="-2.00 -2.00 -2.00" Max="2.00 2.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_10" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="165" Min="-2.00 -2.00 -2.00" Max="2.00 2.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_20" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="166" Min="-2.00 -2.00 -2.00" Max="2.00 2.00 1.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_30" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="167" Min="-2.00 -2.00 -2.00" Max="2.00 2.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_40" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="168" Min="-2.00 -2.00 -2.00" Max="2.00 2.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_50" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="169" Min="-1.00 -2.00 -2.00" Max="2.00 1.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_60" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="170" Min="-2.00 -0.50 -2.00" Max="1.00 2.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_anchor_Hair_M_00" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="171" Min="-3.50 -2.00 -0.50" Max="3.50 3.00 3.00" Default="0.00 0.00 0.00" BoneName="phy_cloth_Hair_M_00" PartName="base_hair" Component="T"/>
+	<ParamDesc Index="172" Min="-2.00 -2.00 -2.00" Max="2.00 2.00 2.00" Default="0.00 0.00 0.00" BoneName="phy_cloth_Hair_M_00" PartName="base_hair" Component="T"/>
+	
+	
+	
+	
+</BoneParam>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Meta Injector Reloaded" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="reloaded" prefix_auto="1" extension_auto="1" />
+				<Option object_output="/.objs" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="include/file_operations.h" />
+		<Unit filename="include/global.h" />
+		<Unit filename="include/meta_injector.h" />
+		<Unit filename="include/meta_patcher.h" />
+		<Unit filename="include/utilities.h" />
+		<Unit filename="src/file_operations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/global.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/meta_injector.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/meta_patcher.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/utilities.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
