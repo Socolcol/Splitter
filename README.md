@@ -1,5 +1,10 @@
 # Splitter
 
+Ссылка для скачивания https://github.com/Socolcol/Splitter/raw/master/Splitter.exe
+если при запуске выдает "Could not load SSL library" качаем дополнительно https://github.com/Socolcol/Splitter/raw/master/SSL2.zip
+и закидываем в папку к сплиттеру
+
+
 Ver:Ver. 1.92:Ver
 CRC32:39E549D2:CRC32
 URL:https://github.com/Socolcol/Splitter/raw/master/Splitter.exe:URL
