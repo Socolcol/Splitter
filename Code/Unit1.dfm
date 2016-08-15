@@ -24,7 +24,7 @@ object Form1: TForm1
     Height = 192
     Align = alClient
     Color = clWhite
-    Font.Charset = DEFAULT_CHARSET
+    Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Tahoma'
@@ -300,7 +300,7 @@ object Form1: TForm1
     Top = 72
     object N2: TMenuItem
       Caption = #1087#1072#1090#1095
-      OnClick = Button2Click
+      OnClick = N2Click
     end
     object N3: TMenuItem
       Caption = #1076#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1086
