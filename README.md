@@ -5,7 +5,7 @@
 и закидываем файлы из этого архива в папку к сплиттеру
 
 
-Ver:Ver. 2.0:Ver
-CRC32:75B58DCB:CRC32
+Ver:Ver. 2.1:Ver
+CRC32:08CED154:CRC32
 URL:https://github.com/Socolcol/Splitter/raw/master/Splitter.exe:URL
 MSG::MSG
