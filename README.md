@@ -8,4 +8,5 @@
 Ver:Ver. 2.1:Ver
 CRC32:08CED154:CRC32
 URL:https://github.com/Socolcol/Splitter/raw/master/Splitter.exe:URL
+Meta::Meta
 MSG::MSG
