@@ -1,0 +1,798 @@
+
+<!-- 이 파일에서 CutType으로 설정되지 못한 PAC 파일들은 컷박스의 영향을 받지 않음 -->
+
+<!-- CutType 정의 -->
+<BasicCutType Name="Underwear">
+	<Path>1_Pc/1_PHM/Armor/38_Underwear</Path>
+	<Path>1_Pc/2_PHW/Armor/38_Underwear</Path>
+	<Path>1_Pc/3_PEW/Armor/38_Underwear</Path>
+	<Path>1_Pc/4_PGM/Armor/38_Underwear</Path>
+	<Path>1_Pc/5_PBW/Armor/38_Underwear</Path>
+	<Path>1_Pc/6_PKM/Armor/38_Underwear</Path>
+	<Path>1_Pc/7_PVW/Armor/38_Underwear</Path>
+	<Path>1_Pc/8_PWM/Armor/38_Underwear</Path>
+	<Path>1_Pc/12_PKW/Armor/38_Underwear</Path>
+	<Path>1_Pc/22_PKWW/Armor/38_Underwear</Path>
+	<Path>1_Pc/13_PNW/Armor/38_Underwear</Path>
+	<Path>1_Pc/13_PNM/Armor/38_Underwear</Path>
+	<Path>1_Pc/8_PWW/Armor/38_Underwear</Path>
+</BasicCutType>
+  
+<BasicCutType Name="Event">
+	<Path>1_Pc/1_PHM/Event_costume</Path>
+	<Path>1_Pc/3_PEW/Event_costume</Path>
+	<Path>1_Pc/2_PHW/Event_costume</Path>
+	<Path>1_Pc/4_PGM/Event_costume</Path>
+	<Path>1_Pc/5_PBW/Event_costume</Path>
+	<Path>1_Pc/6_PKM/Event_costume</Path>
+	<Path>1_Pc/7_PVW/Event_costume</Path>
+	<Path>1_Pc/8_PWM/Event_costume</Path>
+	<Path>1_Pc/12_PKW/Event_costume</Path>
+	<Path>1_Pc/22_PKWW/Event_costume</Path>
+	<Path>1_Pc/13_PNW/Event_costume</Path>
+	<Path>1_Pc/13_PNM/Event_costume</Path>
+	<Path>1_Pc/8_PWW/Event_costume</Path>
+</BasicCutType>
+
+
+<CutType Name="Event_UB">
+	<!-- 	List 10_UB_0002_E that you don't want to mod here		 -->
+	 <File>1_Pc/1_PHM/Armor/9_Upperbody/PHM_10_UB_0002_E.pac</File>	 
+	 <File>1_Pc/4_PGM/Armor/9_Upperbody/PGM_10_UB_0002_E.pac</File>	 
+	 <File>1_Pc/6_PKM/Armor/9_Upperbody/PKM_10_UB_0002_E.pac</File>	 
+	 <File>1_Pc/8_PWM/Armor/9_Upperbody/PWM_10_UB_0002_E.pac</File>	 
+	 <File>1_Pc/13_PNM/Armor/9_Upperbody/PNM_10_UB_0002_E.pac</File>
+	 
+	 <!-- 	List 10_UB_0002_E that you want to mod here		 
+	 <File>1_Pc/2_PHW/Armor/9_Upperbody/PHW_10_UB_0002_E.pac</File>
+	 <File>1_Pc/3_PEW/Armor/9_Upperbody/PEW_10_UB_0002_E.pac</File>
+	 <File>1_Pc/5_PBW/Armor/9_Upperbody/PBW_10_UB_0002_E.pac</File>
+	 <File>1_Pc/7_PVW/Armor/9_Upperbody/PVW_10_UB_0002_E.pac</File>
+	 <File>1_Pc/12_PKW/Armor/9_Upperbody/PKW_10_UB_0002_E.pac</File>
+	 <File>1_Pc/22_PKWW/Armor/9_Upperbody/PKWW_10_UB_0002_E.pac</File>
+	 <File>1_Pc/13_PNW/Armor/9_Upperbody/PKW_10_UB_0002_E.pac</File>
+	 <File>1_Pc/8_PWW/Armor/9_Upperbody/PWW_10_UB_0002_E.pac</File>
+	 -->
+</CutType>
+
+<BasicCutType Name="Upperbody">
+	<!-- 	List upperbody that you don't want to mod here		 -->
+	<Path>1_Pc/1_PHM/Armor/9_Upperbody</Path>
+    <Path>1_Pc/4_PGM/Armor/9_Upperbody</Path>
+	<Path>1_Pc/6_PKM/Armor/9_Upperbody</Path>	
+	<Path>1_Pc/9_PEM/Armor/9_Upperbody</Path>	
+	<Path>1_Pc/13_PNM/Armor/9_Upperbody</Path>
+	
+	<!-- 	List upperbody that you want to mod here	
+	<Path>1_Pc/7_PVW/Armor/9_Upperbody</Path>
+	<Path>1_Pc/12_PKW/Armor/9_Upperbody</Path>
+	<Path>1_Pc/22_PKWW/Armor/9_Upperbody</Path>
+	<Path>1_Pc/13_PNW/Armor/9_Upperbody</Path>
+	-->
+</BasicCutType>
+<BasicCutType Name="PEW_Upperbody">
+	<!-- 	Wizard's upperbody		 -->	
+	<Path>1_Pc/8_PWM/Armor/9_Upperbody</Path>	
+	
+	<!-- 	Ranger's and Witch's upperbody	 
+	<Path>1_Pc/3_PEW/Armor/9_Upperbody</Path>
+	<Path>1_Pc/8_PWW/Armor/9_Upperbody</Path>
+	-->
+</BasicCutType>
+<BasicCutType Name="PHW_Upperbody02">
+	<!-- 	Sorceress's upperbody	
+	<Path>1_Pc/2_PHW/Armor/9_Upperbody</Path>
+	-->
+</BasicCutType>
+<BasicCutType Name="PBW_Upperbody05">
+	<!-- 	Tamer's upperbody	
+	<Path>1_Pc/5_PBW/Armor/9_Upperbody</Path>
+	-->
+</BasicCutType>
+
+<CutType Name="PKW_UpperbodyHair">
+	<!-- 	List all that you want to mod here	
+	 <File>1_Pc/1_PHW/Armor/9_Upperbody/PHW_VW_UB_0003.pac</File>
+	 <File>1_Pc/7_PVW/Armor/9_Upperbody/PVW_00_UB_0003.pac</File>
+	 <File>1_Pc/12_PKW/Armor/9_Upperbody/PKW_00_UB_0001.pac</File>
+	 <File>1_Pc/22_PKWW/Armor/9_Upperbody/PKWW_00_UB_0001.pac</File>
+	 <File>1_Pc/12_PKW/Armor/9_Upperbody/PKW_VW_UB_0003.pac</File>
+	 <File>1_Pc/22_PKWW/Armor/9_Upperbody/PKWW_VW_UB_0003.pac</File>
+	 -->
+</CutType>
+	
+<CutType Name="UpperbodyMod">
+	<File>1_pc/7_pvw/armor/9_upperbody/pvw_00_ub_0037.pac</File>
+	<File>1_pc/7_pvw/armor/9_upperbody/pvw_00_ub_0037_dm.pac</File>
+	<File>1_pc/12_pkw/armor/9_upperbody/pkw_00_ub_0037.pac</File>
+	<File>1_pc/12_pkw/armor/9_upperbody/pkw_00_ub_0037_dm.pac</File>
+	<File>1_Pc/22_PKWW/Armor/9_Upperbody/PKWW_00_UB_0037.pac</File>
+	<File>1_Pc/22_PKWW/Armor/9_Upperbody/PKWW_00_UB_0037_dm.pac</File>
+	<File>1_pc/13_pnw/armor/9_upperbody/pnw_00_ub_0037.pac</File>
+	<File>1_pc/13_pnw/armor/9_upperbody/pnw_00_ub_0037_dm.pac</File>
+	<File>1_pc/3_pew/armor/9_upperbody/pew_00_ub_0037.pac</File>
+	<File>1_pc/3_pew/armor/9_upperbody/pew_00_ub_0037_dm.pac</File>
+	<File>1_pc/8_pww/armor/9_upperbody/pww_00_ub_0037.pac</File>
+	<File>1_pc/8_pww/armor/9_upperbody/pww_00_ub_0037_dm.pac</File>
+	<File>1_pc/2_phw/armor/9_upperbody/phw_00_ub_0037.pac</File>
+	<File>1_pc/2_phw/armor/9_upperbody/phw_00_ub_0037_dm.pac</File>
+	<File>1_pc/5_pbw/armor/9_upperbody/pbw_00_ub_0037.pac</File>
+	<File>1_pc/5_pbw/armor/9_upperbody/pbw_00_ub_0037_dm.pac</File>
+</CutType>
+
+
+<BasicCutType Name="Hand">
+	<Path>1_Pc/1_PHM/Armor/11_Hand</Path>
+	<Path>1_Pc/2_PHW/Armor/11_Hand</Path>
+	<Path>1_Pc/3_PEW/Armor/11_Hand</Path>
+	<Path>1_Pc/4_PGM/Armor/11_Hand</Path>
+	<Path>1_Pc/6_PKM/Armor/11_Hand</Path>
+	<!--Path>1_Pc/7_PVW/Armor/11_Hand</Path-->
+	<Path>1_Pc/9_PEM/Armor/11_Hand</Path>
+	<Path>1_Pc/12_PKW/Armor/11_Hand</Path>
+	<Path>1_Pc/22_PKWW/Armor/11_Hand</Path>
+	<Path>1_Pc/13_PNW/Armor/11_Hand</Path>
+	<Path>1_Pc/13_PNM/Armor/11_Hand</Path>
+</BasicCutType>
+
+<CutType Name="HandMod">
+	<!--Valkyrie-->
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0000.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0001.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0002.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0002_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0003.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0004.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0007.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0007_01.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0034.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0034_01.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0034_01_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0034_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0035.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0037.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0037_dec.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0037_dec_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0037_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0038.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0038_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0040.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0042.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0042_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0052.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_00_hand_0052_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_02_hand_0001.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_02_hand_0002.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_02_hand_0003.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_02_hand_0004.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_02_hand_0005.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_02_hand_0006.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_02_hand_0007.pac</File>
+	<!--File>1_pc/7_pvw/armor/11_hand/pvw_03_hand_0001.pac</File-->
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0001.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0003.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0006.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0007.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0008.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0009.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0009_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0010.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0010_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_10_hand_0011.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_bw_hand_0017.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_ew_hand_0009.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_ew_hand_0030.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_ew_hand_0030_dm.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_ew_hand_0031.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_ew_hand_0032.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_ew_hand_0033.pac</File>
+	<File>1_pc/7_pvw/armor/11_hand/pvw_hw_hand_0031.pac</File>
+</CutType>
+
+<BasicCutType Name="PBW_Hand05">
+	<Path>1_Pc/5_PBW/Armor/11_Hand</Path>
+	<Path>1_Pc/8_PWM/Armor/11_Hand</Path>
+	<Path>1_Pc/8_PWW/Armor/11_Hand</Path>
+</BasicCutType>
+
+<BasicCutType Name="Lowerbody">
+	<!-- 	List lowerbody that you don't want to mod here		 -->
+	<Path>1_Pc/1_PHM/Armor/10_Lowerbody</Path>	
+    <Path>1_Pc/4_PGM/Armor/10_Lowerbody</Path>	
+	<Path>1_Pc/6_PKM/Armor/10_Lowerbody</Path>	
+	<Path>1_Pc/8_PWM/Armor/10_Lowerbody</Path>	
+	<Path>1_Pc/9_PEM/Armor/10_Lowerbody</Path>	
+	<Path>1_Pc/13_PNM/Armor/10_Lowerbody</Path>
+	
+	<!-- 	List lowerbody that you want to mod here
+	<Path>1_Pc/2_PHW/Armor/10_Lowerbody</Path>
+	<Path>1_Pc/3_PEW/Armor/10_Lowerbody</Path>
+	<Path>1_Pc/5_PBW/Armor/10_Lowerbody</Path>
+	<Path>1_Pc/7_PVW/Armor/10_Lowerbody</Path>
+	<Path>1_Pc/8_PWW/Armor/10_Lowerbody</Path>	
+	<Path>1_Pc/12_PKW/Armor/10_Lowerbody</Path>
+	<Path>1_Pc/22_PKWW/Armor/10_Lowerbody</Path>
+	<Path>1_Pc/13_PNW/Armor/10_Lowerbody</Path>
+	-->
+</BasicCutType>
+
+<CutType Name="LowerbodyMod">
+	<File>1_pc/2_phw/armor/10_lowerbody/phw_00_lb_0030.pac</File>
+	<File>1_pc/3_pew/armor/10_lowerbody/pew_00_lb_0009.pac</File>
+	<File>1_pc/3_pew/armor/10_lowerbody/pew_00_lb_0009_dm.pac</File>
+	<File>1_pc/7_pvw/armor/10_lowerbody/pvw_ew_lb_0009.pac</File>
+	<File>1_pc/7_pvw/armor/10_lowerbody/pvw_ew_lb_0009_dm.pac</File>
+	<File>1_pc/12_pkw/armor/10_lowerbody/pkw_ew_lb_0009.pac</File>
+	<File>1_pc/12_pkw/armor/10_lowerbody/pkw_ew_lb_0009_dm.pac</File>
+	<File>1_Pc/22_PKWW/Armor/10_lowerbody/PKWW_EW_lb_0009.pac</File>
+	<File>1_Pc/22_PKWW/Armor/10_lowerbody/PKWW_EW_lb_0009_dm.pac</File>
+	<File>1_pc/8_pww/armor/10_lowerbody/pww_ew_lb_0009.pac</File>
+	<File>1_pc/8_pww/armor/10_lowerbody/pww_ew_lb_0009_dm.pac</File>
+	<File>1_pc/2_phw/armor/10_lowerbody/phw_ew_lb_0009.pac</File>
+	<File>1_pc/2_phw/armor/10_lowerbody/phw_ew_lb_0009_dm.pac</File>
+	<File>1_pc/5_pbw/armor/10_lowerbody/pbw_ew_lb_0009.pac</File>
+	<File>1_pc/5_pbw/armor/10_lowerbody/pbw_ew_lb_0009_dm.pac</File>
+</CutType>
+
+<CutType Name="PKW_LowerbodyHair">
+	<!-- 	List 00_LB_0001 that you want to mod here
+	 <File>1_Pc/12_PKW/Armor/10_Lowerbody/PKW_00_LB_0001.pac</File>
+	 <File>1_Pc/22_PKWW/Armor/10_Lowerbody/PKWW_00_LB_0001.pac</File>
+	 -->
+</CutType>
+
+<BasicCutType Name="Foot">
+	<Path>1_Pc/1_PHM/Armor/12_Foot</Path>
+	<Path>1_Pc/2_PHW/Armor/12_Foot</Path>
+	<Path>1_Pc/3_PEW/Armor/12_Foot</Path>
+    <Path>1_Pc/4_PGM/Armor/12_Foot</Path>
+	<Path>1_Pc/5_PBW/Armor/12_Foot</Path>
+	<Path>1_Pc/6_PKM/Armor/12_Foot</Path>
+	<!--Path>1_Pc/7_PVW/Armor/12_Foot</Path-->
+	<Path>1_Pc/8_PWM/Armor/12_Foot</Path>
+	<Path>1_Pc/9_PEM/Armor/12_Foot</Path>
+	<Path>1_Pc/12_PKW/Armor/12_Foot</Path>
+	<Path>1_Pc/22_PKWW/Armor/12_Foot</Path>
+	<Path>1_Pc/13_PNW/Armor/12_Foot</Path>
+	<Path>1_Pc/8_PWW/Armor/12_Foot</Path>
+	<Path>1_Pc/13_PNM/Armor/12_Foot</Path>
+</BasicCutType>
+
+<CutType Name="FootMod">
+	<!--Valkyrie-->
+	<!--File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0000.pac</File-->
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0001.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0002.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0002_01.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0003.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0003_01.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0004.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0007.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0007_01.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0034.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0035.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0037.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0038.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0040.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0040_dm.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0042.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0052.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_00_foot_0052_dm.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0000.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0001.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0002.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0003.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0004.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0005.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0006.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_02_foot_0007.pac</File>
+	<!--File>1_pc/7_pvw/armor/12_foot/pvw_03_foot_0001.pac</File-->
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0001.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0003.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0006.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0007.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0008.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0009.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0010.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_10_foot_0011.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_bw_foot_0017.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_ew_foot_0009.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_ew_foot_0030.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_ew_foot_0031.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_ew_foot_0032.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_ew_foot_0033.pac</File>
+	<File>1_pc/7_pvw/armor/12_foot/pvw_hw_foot_0031.pac</File>
+</CutType>
+
+<BasicCutType Name="Nude">
+	<Path>1_Pc/1_PHM/Nude</Path>
+	<Path>1_Pc/2_PHW/Nude</Path>
+	<Path>1_Pc/3_PEW/Nude</Path>
+	<Path>1_Pc/4_PGM/Nude</Path>
+    <Path>1_Pc/5_PBW/Nude</Path>
+	<Path>1_Pc/6_PKM/Nude</Path>
+	<Path>1_Pc/7_PVW/Nude</Path>
+	<Path>1_Pc/8_PWM/Nude</Path>
+	<Path>1_Pc/9_PEM/Nude</Path>
+	<Path>1_Pc/12_PKW/Nude</Path>
+	<Path>1_Pc/22_PKWW/Nude</Path>
+	<Path>1_Pc/13_PNW/Nude</Path>
+	<Path>1_Pc/13_PNM/Nude</Path>
+	<Path>1_Pc/8_PWW/Nude</Path>
+</BasicCutType>
+
+<BasicCutType Name="Hel">
+	<Path>1_Pc/1_PHM/Armor/13_Hel</Path>
+	<Path>1_Pc/2_PHW/Armor/13_Hel</Path>
+	<Path>1_Pc/3_PEW/Armor/13_Hel</Path>
+	<Path>1_Pc/4_PGM/Armor/13_Hel</Path>
+	<Path>1_Pc/5_PBW/Armor/13_Hel</Path>
+	<Path>1_Pc/6_PKM/Armor/13_Hel</Path>
+	<Path>1_Pc/7_PVW/Armor/13_Hel</Path>
+	<Path>1_Pc/8_PWM/Armor/13_Hel</Path>
+	<Path>1_Pc/12_PKW/Armor/13_Hel</Path>
+	<Path>1_Pc/22_PKWW/Armor/13_Hel</Path>
+	<Path>1_Pc/13_PNW/Armor/13_Hel</Path>
+	<Path>1_Pc/13_PNM/Armor/13_Hel</Path>
+	<Path>1_Pc/8_PWW/Armor/13_Hel</Path>
+</BasicCutType>
+
+<CutType Name="PWM_HelCut"> <!--            위치 꽁지머리 짜를 헬멧               --->
+	 <File>1_Pc/2_PHW/Armor/13_Hel/PHW_EW_Hel_0031_HairCut.pac</File>
+	 <File>1_Pc/8_PWW/Armor/13_Hel/PWW_EW_Hel_0031_HairCut.pac</File>
+	 <File>1_Pc/8_PWM/Armor/13_Hel/PWM_HM_Hel_0031_HairCut.pac</File>
+	 <File>1_Pc/12_PKW/Armor/13_Hel/PKW_EW_Hel_0031_HairCut.pac</File>
+	 <File>1_Pc/22_PKWW/Armor/13_Hel/PKWW_EW_Hel_0031_HairCut.pac</File>
+	 <File>1_Pc/7_PVW/Armor/13_Hel/PVW_EW_Hel_0031_HairCut.pac</File>
+	 <File>1_Pc/5_PBW/Armor/13_Hel/PBW_EW_Hel_0031_HairCut.pac</File>
+	 <File>1_Pc/13_PNW/Armor/13_Hel/PNW_EW_Hel_0031_HairCut.pac</File>
+	 
+</CutType>
+
+<CutType Name="Hel_CutBeard"> <!--           수염자르는 헬멧               --->
+	 <File>1_Pc/8_PWM/Armor/13_Hel/PWM_00_Hel_0034_A.pac</File>
+</CutType>
+
+<CutType Name="PWM_HairCut"> <!--            위치 꽁지머리    --->
+	 <File>1_Pc/2_PHW/Head/Hair/PHW_00_Hair_0014.pac</File>
+     <File>1_Pc/7_PVW/Head/Hair/PVW_00_Hair_0012.pac</File>
+	 <File>1_Pc/7_PVW/Head/Hair/PVW_00_Hair_0014.pac</File>
+	 <File>1_Pc/12_PKW/Head/Hair/PKW_00_Hair_0001.pac</File>
+	 <File>1_Pc/12_PKW/Head/Hair/PKW_00_Hair_0003.pac</File>
+	 <File>1_Pc/12_PKW/Head/Hair/PKW_00_Hair_0007.pac</File>
+	 <File>1_Pc/12_PKW/Head/Hair/PKW_00_Hair_0016.pac</File>
+	 <File>1_Pc/8_PWW/Head/Hair/PWW_00_Hair_0013.pac</File>
+	 <File>1_Pc/8_PWM/Head/Hair/PWM_00_Hair_0009.pac</File>
+	 <File>1_Pc/5_PBW/Head/Hair/PBW_00_Hair_0013.pac</File>
+	 <File>1_Pc/13_PNW/Head/Hair/PNW_00_Hair_0013.pac</File>
+	 <File>1_Pc/22_PKWW/Head/Hair/PKWW_00_Hair_0001.pac</File>
+	 <File>1_Pc/22_PKWW/Head/Hair/PKWW_00_Hair_0003.pac</File>
+	 <File>1_Pc/22_PKWW/Head/Hair/PKWW_00_Hair_0007.pac</File>
+	 <File>1_Pc/22_PKWW/Head/Hair/PKWW_00_Hair_0016.pac</File>
+</CutType>
+
+
+<BasicCutType Name="Earring">
+	<Path>1_Pc/1_PHM/Armor/39_Earring</Path>
+	<Path>1_Pc/2_PHW/Armor/39_Earring</Path>
+	<Path>1_Pc/3_PEW/Armor/39_Earring</Path>
+	<Path>1_Pc/4_PGM/Armor/39_Earring</Path>
+    <Path>1_Pc/5_PBW/Armor/39_Earring</Path>	
+	<Path>1_Pc/6_PKM/Armor/39_Earring</Path>
+	<Path>1_Pc/7_PVW/Armor/39_Earring</Path>
+	<Path>1_Pc/8_PWM/Armor/39_Earring</Path>
+	<Path>1_Pc/12_PKW/Armor/39_Earring</Path>
+	<Path>1_Pc/22_PKWW/Armor/39_Earring</Path>
+	<Path>1_Pc/13_PNW/Armor/39_Earring</Path>
+	<Path>1_Pc/13_PNM/Armor/39_Earring</Path>
+	<Path>1_Pc/8_PWW/Armor/39_Earring</Path>
+</BasicCutType>
+
+<BasicCutType Name="Hair">
+	<Path>1_Pc/1_PHM/Head/Hair</Path>
+	<Path>1_Pc/2_PHW/Head/Hair</Path>
+	<Path>1_Pc/3_PEW/Head/Hair</Path>
+	<Path>1_Pc/4_PGM/Head/Hair</Path>
+	<Path>1_Pc/5_PBW/Head/Hair</Path>
+	<Path>1_Pc/6_PKM/Head/Hair</Path>
+	<Path>1_Pc/7_PVW/Head/Hair</Path>
+	<Path>1_Pc/8_PWM/Head/Hair</Path>
+	<Path>1_Pc/12_PKW/Head/Hair</Path>
+	<Path>1_Pc/22_PKWW/Head/Hair</Path>
+	<Path>1_Pc/13_PNW/Head/Hair</Path>
+	<Path>1_Pc/13_PNM/Head/Hair</Path>
+	<Path>1_Pc/8_PWW/Head/Hair</Path>
+</BasicCutType>
+
+<BasicCutType Name="Sho">
+	<Path>1_Pc/1_PHM/Armor/14_Sho</Path>
+	<Path>1_Pc/13_PNM/Armor/14_Sho</Path>
+</BasicCutType>
+
+<BasicCutType Name="EnchantArm">
+	<Path>1_Pc/2_PHW/Weapon/28_EnchantArm</Path>
+</BasicCutType>
+
+<BasicCutType Name="Beard">
+	<Path>1_Pc/1_PHM/Head/Beard</Path>
+	<Path>1_Pc/4_PGM/Head/Beard</Path>
+	<Path>1_Pc/8_PWM/Head/Beard</Path>
+	<Path>1_Pc/13_PNM/Head/Beard</Path>
+</BasicCutType>
+
+
+<BasicCutType Name="Head">
+	<Path>1_Pc/1_PHM/Head/Head</Path>
+	<Path>1_Pc/2_PHW/Head/Head</Path>
+	<Path>1_Pc/3_PEW/Head/Head</Path>
+	<Path>1_Pc/4_PGM/Head/Head</Path>
+	<Path>1_Pc/5_PBW/Head/Head</Path>
+	<Path>1_Pc/6_PKM/Head/Head</Path>
+	<Path>1_Pc/7_PVW/Head/Head</Path>
+	<Path>1_Pc/8_PWM/Head/Head</Path>
+	<Path>1_Pc/12_PKW/Head/Head</Path>
+	<Path>1_Pc/22_PKWW/Head/Head</Path>
+	<Path>1_Pc/13_PNW/Head/Head</Path>
+	<Path>1_Pc/13_PNM/Head/Head</Path>
+	<Path>1_Pc/8_PWW/Head/Head</Path>
+</BasicCutType>
+
+<BasicCutType Name="PHW_Sho02">
+ <!--Path>1_Pc/2_PHW/Armor/14_Sho</Path-->	
+</BasicCutType>
+
+<BasicCutType Name="PBW_Sho">
+ <Path>1_Pc/5_PBW/Armor/14_Sho</Path>	
+ <Path>1_Pc/3_PEW/Armor/14_Sho</Path>	
+ <Path>1_Pc/7_PVW/Armor/14_Sho</Path>	
+ <Path>1_Pc/8_PWW/Armor/14_Sho</Path>	
+ <Path>1_Pc/12_PKW/Armor/14_Sho</Path>	
+ <Path>1_Pc/22_PKWW/Armor/14_Sho</Path>	
+ <Path>1_Pc/13_PNW/Armor/14_Sho</Path>	
+</BasicCutType>
+
+<BasicCutType Name="Weapon">
+ <Path>1_Pc/2_PHW/Weapon/33_Talisman</Path> 
+ <Path>1_Pc/3_PEW/Weapon/31_OneHandBow</Path> 
+ <Path>1_Pc/3_PEW/Weapon/32_Dagger</Path> 
+</BasicCutType>
+
+<BasicCutType Name="PGM_HandCanon">
+ <Path>1_Pc/4_PGM/Weapon/42_HandCanon</Path> 
+ </BasicCutType>
+
+<CutType Name="PHW_Sho03">
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_00_Sho_0002.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_BW_Sho_0017.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_VW_Sho_0003.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_EW_Sho_0033.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_10_Sho_0010.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_10_Sho_0010_dm.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_00_Sho_0043.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_00_Sho_0043_dm.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_00_Sho_0049.pac</File>
+	 <File>1_Pc/2_PHW/Armor/14_Sho/PHW_00_Sho_0049_dm.pac</File>
+	 <File>1_Pc/3_PEW/Armor/14_Sho/PEW_00_Sho_0053.pac</File>
+</CutType>
+
+
+
+<CutType Name="EventCostume"><!-----------                    잠입복장                         ----------->
+	<File>1_Pc/1_PHM/Event_costume/PHM_00_EVT_0001_E.pac</File>
+	<File>1_Pc/1_PHM/Event_costume/PHM_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/2_PHW/Event_costume/PHW_00_EVT_0001_E.pac</File>
+	<File>1_Pc/2_PHW/Event_costume/PHW_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/3_PEW/Event_costume/PEW_00_EVT_0001_E.pac</File>
+	<File>1_Pc/3_PEW/Event_costume/PEW_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/4_PGM/Event_costume/PGM_00_EVT_0001_E.pac</File>
+	<File>1_Pc/4_PGM/Event_costume/PGM_00_EVT_0001_Mul_E.pac</File>
+	<File>1_Pc/4_PGM/Event_costume/PGM_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/5_PBW/Event_costume/PBW_00_EVT_0001_E.pac</File>
+	<File>1_Pc/5_PBW/Event_costume/PBW_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/6_PKM/Event_costume/PKM_00_EVT_0001_E.pac</File>
+	<File>1_Pc/6_PKM/Event_costume/PKM_00_Manufacture_0001_E.pac</File>
+    <File>1_Pc/7_PVW/Event_costume/PVW_00_EVT_0001_E.pac</File>
+    <File>1_Pc/7_PVW/Event_costume/PVW_00_Manufacture_0001_E.pac</File>
+    <File>1_Pc/8_PWM/Event_costume/PWM_00_EVT_0001_E.pac</File>
+    <File>1_Pc/8_PWM/Event_costume/PWM_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/12_PKW/Event_costume/PKW_00_EVT_0001_E.pac</File>
+	<File>1_Pc/12_PKW/Event_costume/PKW_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/22_PKWW/Event_costume/PKWW_00_EVT_0001_E.pac</File>
+	<File>1_Pc/22_PKWW/Event_costume/PKWW_00_Manufacture_0001_E.pac</File>
+    <File>1_Pc/8_PWW/Event_costume/PWW_00_EVT_0001_E.pac</File>
+    <File>1_Pc/8_PWW/Event_costume/PWW_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/13_PNW/Event_costume/PNW_00_EVT_0001_E.pac</File>
+	<File>1_Pc/13_PNW/Event_costume/PNW_00_Manufacture_0001_E.pac</File>
+	<File>1_Pc/13_PNM/Event_costume/PNM_00_EVT_0001_E.pac</File>
+	<File>1_Pc/13_PHM/Event_costume/PNM_00_Manufacture_0001_E.pac</File>
+</CutType>
+
+
+<CutType Name="EVT_Hel">
+	<File>1_Pc/1_PHM/Event_costume/PHM_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/1_PHM/Event_costume/PHM_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/2_PHW/Event_costume/PHW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/3_PEW/Event_costume/PEW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/4_PGM/Event_costume/PGM_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/5_PBW/Event_costume/PBW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/6_PKM/Event_costume/PKM_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/7_PVW/Event_costume/PVW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/8_PWM/Event_costume/PWM_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/12_PKW/Event_costume/PKW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/22_PKWW/Event_costume/PKWW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/8_PWW/Event_costume/PWW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/13_PNW/Event_costume/PNW_00_EVT_LB_0001.pac</File>
+	<File>1_Pc/13_PNM/Event_costume/PNM_00_EVT_LB_0001.pac</File>
+</CutType>
+
+<CutType Name="PGM_Hel">
+	<File>1_Pc/4_PGM/Armor/13_Hel/PGM_00_Hel_0030.pac</File>
+</CutType>
+
+<CutType Name="Fish_Hand">
+	<File>1_Pc/2_PHW/Armor/11_Hand/PHW_10_Hand_0003.pac</File>
+	<File>1_Pc/3_PEW/Armor/11_Hand/PEW_10_Hand_0003.pac</File>
+</CutType>
+
+<CutType Name="PNM_Hel">
+	<File>1_Pc/13_PNM/Armor/13_Hel/PNM_00_Hel_0001_op.pac</File>
+</CutType>
+
+<CutType Name="PNM_Glasses">
+	<File>1_Pc/13_PNM/Armor/40_Glasses/PNM_00_Glasses_0001.pac</File>
+	<File>1_Pc/13_PNM/Armor/40_Glasses/PNM_00_Glasses_0002.pac</File>
+	<File>1_Pc/13_PNM/Armor/40_Glasses/PNM_00_Glasses_0003.pac</File>
+	<File>1_Pc/13_PNM/Armor/40_Glasses/PNM_00_Glasses_0004.pac</File>
+</CutType>
+
+<CutType Name="Hores_Hel">
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0001.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0002.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0003.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0004.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0005.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0006.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0007.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0008.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0009.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0010.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0010_No_lashes.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0011.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0012.pac</File>
+	<File>4_Riding/R0001_Horse/Armor/Hel/RH_01_Hel_0013.pac</File>
+</CutType>
+
+
+<CutType Name="PGM_00_OHC_0000">
+	<File>1_Pc/4_PGM/Weapon/42_HandCanon/PGM_00_OHC_0000.pac</File>
+</CutType>
+
+<CutType Name="PGM_00_OHC_0000_01">
+	<File>1_Pc/4_PGM/Weapon/42_HandCanon/PGM_00_OHC_0000_01.pac</File>
+</CutType>
+
+
+<CutType Name="Hores_Horn">
+	<File>4_Riding/R0001_Horse/Body/Horn/RH_01_Horn_1019.pac</File>
+</CutType>
+
+<!----------------------- 각 CutType이 어떤 CutType들을 잘라내는지 관계 기술 -------------------------------->
+
+<!-- Costume_UB은 Nude를 자른다. -->
+
+
+
+
+<!-- Event는 모두 를 자른다. -->
+
+<Relation CutType="PGM_HandCanon">
+	<Cut>Nude</Cut>	
+	<Cut>Underwear</Cut>	
+</Relation>
+
+<Relation CutType="PGM_00_OHC_0000">
+	<Cut>Hand</Cut>		
+</Relation>
+
+<Relation CutType="PGM_00_OHC_0000_01">
+	<Cut>Upperbody</Cut>	
+	<Cut>Event</Cut>	
+	<Cut>Event_UB</Cut>	
+	<Cut>EventCostume</Cut>	
+</Relation>
+
+
+<Relation CutType="Earring">
+	<Cut>Hair</Cut>	
+</Relation>
+
+<Relation CutType="PNM_Hel">
+	<Cut>PNM_Glasses</Cut>	
+</Relation>
+
+<Relation CutType="Hores_Hel">
+	<Cut>Hores_Horn</Cut>	
+</Relation>
+
+<Relation CutType="Fish_Hand">
+	<Cut>Weapon</Cut>	
+	<Cut>EnchantArm</Cut>
+</Relation>
+
+<Relation CutType="Underwear">
+	<Cut>Nude</Cut>		
+</Relation>
+
+<Relation CutType="Event">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+	<Cut>Upperbody</Cut>
+	<Cut>Foot</Cut>
+	<Cut>FootMod</Cut>
+	<Cut>Hand</Cut>
+	<Cut>HandMod</Cut>	
+	<Cut>Sho</Cut>				
+</Relation>
+
+<Relation CutType="Event_UB">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+	<Cut>Upperbody</Cut>
+	<Cut>Foot</Cut>
+	<Cut>FootMod</Cut>
+	<Cut>Hand</Cut>
+	<Cut>HandMod</Cut>	
+	<Cut>Sho</Cut>				
+</Relation>
+
+<Relation CutType="EVT_Hel">
+	<Cut>Beard</Cut>
+	<Cut>Head</Cut>
+	<Cut>Hair</Cut>
+</Relation>
+
+<Relation CutType="PWM_HelCut">
+	<Cut>PWM_HairCut</Cut>
+</Relation>
+
+<Relation CutType="Hel_CutBeard">
+	<Cut>Beard</Cut>
+</Relation>
+
+<Relation CutType="EventCostume">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+	<Cut>Upperbody</Cut>
+	<Cut>Foot</Cut>
+	<Cut>FootMod</Cut>
+	<Cut>Hair</Cut>
+	<Cut>Hand</Cut>
+	<Cut>HandMod</Cut>	
+	<Cut>Sho</Cut>				
+</Relation>
+
+<Relation CutType="Upperbody">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+</Relation>
+
+<Relation CutType="PEW_Upperbody">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+</Relation>
+
+<Relation CutType="PHW_Upperbody02">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+	<Cut>PHW_Sho02</Cut>
+</Relation>
+
+<Relation CutType="UpperbodyMod">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+</Relation>
+
+<Relation CutType="PHW_Sho03">
+	<Cut>Underwear</Cut>
+</Relation>
+
+<Relation CutType="PBW_Upperbody05">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+	<Cut>PBW_Hand05</Cut>
+	<Cut>PBW_Sho</Cut>
+</Relation>
+
+<Relation CutType="PKW_UpperbodyHair">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+	<Cut>Lowerbody</Cut>
+</Relation>
+
+<Relation CutType="Lowerbody">
+	<Cut>Underwear</Cut>
+	<Cut>Nude</Cut>
+</Relation>
+
+<Relation CutType="LowerbodyMod">
+	<Cut>Underwear</Cut>
+	<Cut>Nude</Cut>
+</Relation>
+
+<Relation CutType="PKW_LowerbodyHair">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+</Relation>
+
+<Relation CutType="Hand">
+	<Cut>Nude</Cut>
+	<Cut>Upperbody</Cut>
+	<Cut>PEW_Upperbody</Cut>
+	<Cut>Underwear</Cut>
+</Relation>
+
+<Relation CutType="HandMod">
+	<Cut>Nude</Cut>
+	<Cut>Upperbody</Cut>
+	<Cut>PEW_Upperbody</Cut>
+	<Cut>Underwear</Cut>
+</Relation>
+
+<Relation CutType="PBW_Hand05">
+	<Cut>Nude</Cut>
+</Relation>
+
+<Relation CutType="Foot">
+	<Cut>Nude</Cut>
+	<Cut>Lowerbody</Cut>
+	<Cut>Underwear</Cut>	
+</Relation>
+
+<Relation CutType="FootMod">
+	<Cut>Nude</Cut>
+	<Cut>Lowerbody</Cut>
+	<Cut>Underwear</Cut>	
+</Relation>
+
+
+<Relation CutType="Hel">
+        <Cut>Hair</Cut>
+        <Cut>Earring</Cut>
+        <Cut>PWM_HairCut</Cut>
+</Relation>
+
+<Relation CutType="PGM_Hel">
+        <Cut>Hair</Cut>
+        <Cut>Earring</Cut>
+        <Cut>Beard</Cut>
+</Relation>
+<Relation CutType="EnchantArm">
+	<Cut>Hand</Cut>
+	<Cut>Nude</Cut>
+</Relation>
+
+<Relation CutType="PHW_Sho02">
+	<Cut>Nude</Cut>
+	<Cut>Underwear</Cut>
+</Relation>
+
+<Relation CutType="PBW_Sho">
+	<Cut>Underwear</Cut>
+</Relation>
+
+
+
+
+
+
+
+
+
