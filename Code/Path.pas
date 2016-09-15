@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, IniFiles, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, TlHelp32, ShellAPI,
   IdBaseComponent, IdComponent, FileCtrl, IOUtils, IdTCPConnection, IdTCPClient, IdHTTP,
-  Vcl.ExtCtrls, System.ImageList, Vcl.ImgList;
+  Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, Vcl.OleCtrls, SHDocVw;
 
 type
   TForm4 = class(TForm)
@@ -18,35 +18,35 @@ type
     GroupBox1: TGroupBox;
     armor1: TRadioButton;
     armor2: TRadioButton;
-    RadioButton3: TRadioButton;
+    armor4: TRadioButton;
     armor3: TRadioButton;
     GroupBox4: TGroupBox;
     boots1: TRadioButton;
     boots2: TRadioButton;
-    RadioButton12: TRadioButton;
+    boots3: TRadioButton;
     GroupBox3: TGroupBox;
     glowers1: TRadioButton;
     glowers2: TRadioButton;
-    RadioButton9: TRadioButton;
+    glowers3: TRadioButton;
     GroupBox2: TGroupBox;
     underwear1: TRadioButton;
     underwear2: TRadioButton;
-    RadioButton6: TRadioButton;
+    underwear3: TRadioButton;
     GroupBox6: TGroupBox;
     sorkweap1: TRadioButton;
     sorkweap2: TRadioButton;
-    RadioButton17: TRadioButton;
+    sorkweap3: TRadioButton;
     GroupBox5: TGroupBox;
     lifeskill1: TRadioButton;
-    RadioButton15: TRadioButton;
+    lifeskill2: TRadioButton;
     GroupBox8: TGroupBox;
     lowerbody1: TRadioButton;
     lowerbody2: TRadioButton;
-    RadioButton5: TRadioButton;
+    lowerbody3: TRadioButton;
     GroupBox9: TGroupBox;
     hats1: TRadioButton;
-    RadioButton2: TRadioButton;
-    RadioButton4: TRadioButton;
+    hats2: TRadioButton;
+    hats3: TRadioButton;
     GroupBox10: TGroupBox;
     Label1: TLabel;
     TrackBar1: TTrackBar;
@@ -96,8 +96,6 @@ type
     HD3: TRadioButton;
     HD6: TRadioButton;
     HD9: TRadioButton;
-    ImageList1: TImageList;
-    Image1: TImage;
     SD1: TRadioButton;
     SD2: TRadioButton;
     SD3: TRadioButton;
@@ -107,6 +105,32 @@ type
     SD7: TRadioButton;
     SD8: TRadioButton;
     SD9: TRadioButton;
+    CheckBox11: TCheckBox;
+    CheckBox12: TCheckBox;
+    CheckBox13: TCheckBox;
+    CheckBox14: TCheckBox;
+    WebBrowser1: TWebBrowser;
+    GroupBox11: TGroupBox;
+    CheckBox15: TCheckBox;
+    CheckBox16: TCheckBox;
+    CheckBox17: TCheckBox;
+    CheckBox18: TCheckBox;
+    CheckBox19: TCheckBox;
+    CheckBox20: TCheckBox;
+    CheckBox21: TCheckBox;
+    GroupBox12: TGroupBox;
+    CheckBox22: TCheckBox;
+    CheckBox23: TCheckBox;
+    CheckBox24: TCheckBox;
+    CheckBox25: TCheckBox;
+    CheckBox26: TCheckBox;
+    TabSheet5: TTabSheet;
+    CheckBox27: TCheckBox;
+    WebBrowser2: TWebBrowser;
+    CheckBox28: TCheckBox;
+    CheckBox29: TCheckBox;
+    CheckBox30: TCheckBox;
+    Label11: TLabel;
     procedure TrackBar1Change(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure TexturePars(Sender: TObject);
@@ -123,6 +147,15 @@ type
     procedure HD8Click(Sender: TObject);
     procedure HD9Click(Sender: TObject);
     procedure nude1Click(Sender: TObject);
+    procedure nude8Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure WebBrowser1DocumentComplete(ASender: TObject;
+      const pDisp: IDispatch; const URL: OleVariant);
+    procedure CheckBox27Click(Sender: TObject);
+    procedure CheckBox28Click(Sender: TObject);
+    procedure CheckBox29Click(Sender: TObject);
+    procedure CheckBox30Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -167,63 +200,373 @@ begin
 end;
 
 procedure TForm4.nude1Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(7, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
+end;
+
+procedure TForm4.nude8Click(Sender: TObject);
+begin
+checkbox8.Checked:=true;
 end;
 
 procedure TForm4.HD7Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(6, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/trimmed/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
 end;
 
 procedure TForm4.HD5Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(3, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/small_bush_2/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
 end;
 
 procedure TForm4.HD8Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(8, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/wide_landing_strip/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
 end;
 
 procedure TForm4.HD3Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(2, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/medium_bush2/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
 end;
 
 procedure TForm4.HD6Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(5, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/thin_landing_strip/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
 end;
 
 procedure TForm4.HD9Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(9, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/wider_trimmed/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
+end;
+
+procedure TForm4.CheckBox27Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
+begin
+ WebBrowser2.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/1/Vlada1.jpg', Flags,
+    TargetFrameName, PostData, Headers);
+end;
+
+procedure TForm4.CheckBox28Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
+begin
+ WebBrowser2.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/2/Vlada2.jpg', Flags,
+    TargetFrameName, PostData, Headers);
+end;
+
+procedure TForm4.CheckBox29Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
+begin
+ WebBrowser2.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/4/Vlada4.jpg', Flags,
+    TargetFrameName, PostData, Headers);
+end;
+
+procedure TForm4.CheckBox30Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
+begin
+ WebBrowser2.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/3/Vlada3.jpg', Flags,
+    TargetFrameName, PostData, Headers);
+end;
+
+procedure TForm4.FormClose(Sender: TObject; var Action: TCloseAction);
+var
+IniFile : TIniFile;
+begin
+IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
+ if armor1.Checked=true then inifile.WriteString('settings','armor1', '1')
+  else inifile.WriteString('settings','armor1', '0');
+ if armor2.Checked=true then inifile.WriteString('settings','armor2', '1')
+  else inifile.WriteString('settings','armor2', '0');
+ if armor3.Checked=true then inifile.WriteString('settings','armor3', '1')
+  else inifile.WriteString('settings','armor3', '0');
+ if armor4.Checked=true then inifile.WriteString('settings','armor4', '1')
+  else inifile.WriteString('settings','armor4', '0');
+ if boots1.Checked=true then inifile.WriteString('settings','boots1', '1')
+  else inifile.WriteString('settings','boots1', '0');
+ if boots2.Checked=true then inifile.WriteString('settings','boots2', '1')
+  else inifile.WriteString('settings','boots2', '0');
+ if boots3.Checked=true then inifile.WriteString('settings','boots3', '1')
+  else inifile.WriteString('settings','boots3', '0');
+ if glowers1.Checked=true then inifile.WriteString('settings','glowers1', '1')
+  else inifile.WriteString('settings','glowers1', '0');
+ if glowers2.Checked=true then inifile.WriteString('settings','glowers2', '1')
+  else inifile.WriteString('settings','glowers2', '0');
+ if glowers3.Checked=true then inifile.WriteString('settings','glowers3', '1')
+  else inifile.WriteString('settings','glowers3', '0');
+ if underwear1.Checked=true then inifile.WriteString('settings','underwear1', '1')
+  else inifile.WriteString('settings','underwear1', '0');
+ if underwear2.Checked=true then inifile.WriteString('settings','underwear2', '1')
+  else inifile.WriteString('settings','underwear2', '0');
+ if underwear3.Checked=true then inifile.WriteString('settings','underwear3', '1')
+  else inifile.WriteString('settings','underwear3', '0');
+ if sorkweap1.Checked=true then inifile.WriteString('settings','sorkweap1', '1')
+  else inifile.WriteString('settings','sorkweap1', '0');
+ if sorkweap2.Checked=true then inifile.WriteString('settings','sorkweap2', '1')
+  else inifile.WriteString('settings','sorkweap2', '0');
+ if sorkweap3.Checked=true then inifile.WriteString('settings','sorkweap3', '1')
+  else inifile.WriteString('settings','sorkweap3', '0');
+ if lifeskill1.Checked=true then inifile.WriteString('settings','lifeskill1', '1')
+  else inifile.WriteString('settings','lifeskill1', '0');
+ if lifeskill2.Checked=true then inifile.WriteString('settings','lifeskill2', '1')
+  else inifile.WriteString('settings','lifeskill2', '0');
+ if lowerbody1.Checked=true then inifile.WriteString('settings','lowerbody1', '1')
+  else inifile.WriteString('settings','lowerbody1', '0');
+ if lowerbody2.Checked=true then inifile.WriteString('settings','lowerbody2', '1')
+  else inifile.WriteString('settings','lowerbody2', '0');
+ if lowerbody3.Checked=true then inifile.WriteString('settings','lowerbody3', '1')
+  else inifile.WriteString('settings','lowerbody3', '0');
+ if hats1.Checked=true then inifile.WriteString('settings','hats1', '1')
+  else inifile.WriteString('settings','hats1', '0');
+ if hats2.Checked=true then inifile.WriteString('settings','hats2', '1')
+  else inifile.WriteString('settings','hats2', '0');
+ if hats3.Checked=true then inifile.WriteString('settings','hats3', '1')
+  else inifile.WriteString('settings','hats3', '0');
+ if nudetamer.Checked=true then inifile.WriteString('settings','nudetamer', '1')
+  else inifile.WriteString('settings','nudetamer', '0');
+
+ if CheckBox1.Checked=true then inifile.WriteString('settings','CheckBox1', '1')
+  else inifile.WriteString('settings','CheckBox1', '0');
+ if CheckBox2.Checked=true then inifile.WriteString('settings','CheckBox2', '1')
+  else inifile.WriteString('settings','CheckBox2', '0');
+ if CheckBox3.Checked=true then inifile.WriteString('settings','CheckBox3', '1')
+  else inifile.WriteString('settings','CheckBox3', '0');
+ if CheckBox4.Checked=true then inifile.WriteString('settings','CheckBox4', '1')
+  else inifile.WriteString('settings','CheckBox4', '0');
+ if CheckBox5.Checked=true then inifile.WriteString('settings','CheckBox5', '1')
+  else inifile.WriteString('settings','CheckBox5', '0');
+ if CheckBox6.Checked=true then inifile.WriteString('settings','CheckBox6', '1')
+  else inifile.WriteString('settings','CheckBox6', '0') ;
+ if CheckBox7.Checked=true then inifile.WriteString('settings','CheckBox7', '1')
+  else inifile.WriteString('settings','CheckBox7', '0');
+ if CheckBox8.Checked=true then inifile.WriteString('settings','CheckBox8', '1')
+  else inifile.WriteString('settings','CheckBox8', '0');
+ if CheckBox9.Checked=true then inifile.WriteString('settings','CheckBox9', '1')
+  else inifile.WriteString('settings','CheckBox9', '0');
+ if CheckBox10.Checked=true then inifile.WriteString('settings','CheckBox10', '1')
+  else inifile.WriteString('settings','CheckBox10', '0');
+ if CheckBox11.Checked=true then inifile.WriteString('settings','CheckBox11', '1')
+  else inifile.WriteString('settings','CheckBox11', '0');
+ if CheckBox12.Checked=true then inifile.WriteString('settings','CheckBox12', '1')
+  else inifile.WriteString('settings','CheckBox12', '0');
+ if CheckBox13.Checked=true then inifile.WriteString('settings','CheckBox13', '1')
+  else inifile.WriteString('settings','CheckBox13', '0');
+ if CheckBox14.Checked=true then inifile.WriteString('settings','CheckBox14', '1')
+  else inifile.WriteString('settings','CheckBox14', '0');
+  if CheckBox15.Checked=true then inifile.WriteString('settings','CheckBox15', '1')
+  else inifile.WriteString('settings','CheckBox15', '0');
+  if CheckBox16.Checked=true then inifile.WriteString('settings','CheckBox16', '1')
+  else inifile.WriteString('settings','CheckBox16', '0');
+  if CheckBox17.Checked=true then inifile.WriteString('settings','CheckBox17', '1')
+  else inifile.WriteString('settings','CheckBox17', '0');
+  if CheckBox18.Checked=true then inifile.WriteString('settings','CheckBox18', '1')
+  else inifile.WriteString('settings','CheckBox18', '0');
+  if CheckBox19.Checked=true then inifile.WriteString('settings','CheckBox19', '1')
+  else inifile.WriteString('settings','CheckBox19', '0');
+  if CheckBox20.Checked=true then inifile.WriteString('settings','CheckBox20', '1')
+  else inifile.WriteString('settings','CheckBox20', '0');
+  if CheckBox21.Checked=true then inifile.WriteString('settings','CheckBox21', '1')
+  else inifile.WriteString('settings','CheckBox21', '0');
+  if CheckBox22.Checked=true then inifile.WriteString('settings','CheckBox22', '1')
+  else inifile.WriteString('settings','CheckBox22', '0');
+  if CheckBox23.Checked=true then inifile.WriteString('settings','CheckBox23', '1')
+  else inifile.WriteString('settings','CheckBox23', '0');
+  if CheckBox24.Checked=true then inifile.WriteString('settings','CheckBox24', '1')
+  else inifile.WriteString('settings','CheckBox24', '0');
+  if CheckBox25.Checked=true then inifile.WriteString('settings','CheckBox25', '1')
+  else inifile.WriteString('settings','CheckBox25', '0');
+  if CheckBox26.Checked=true then inifile.WriteString('settings','CheckBox26', '1')
+  else inifile.WriteString('settings','CheckBox26', '0');
+  if CheckBox27.Checked=true then inifile.WriteString('settings','CheckBox27', '1')
+  else inifile.WriteString('settings','CheckBox27', '0');
+  if CheckBox28.Checked=true then inifile.WriteString('settings','CheckBox28', '1')
+  else inifile.WriteString('settings','CheckBox28', '0');
+  if CheckBox29.Checked=true then inifile.WriteString('settings','CheckBox29', '1')
+  else inifile.WriteString('settings','CheckBox29', '0');
+  if CheckBox30.Checked=true then inifile.WriteString('settings','CheckBox30', '1')
+  else inifile.WriteString('settings','CheckBox30', '0');
+  inifile.WriteString('settings','track1', inttostr(TrackBar1.Position));
+  inifile.WriteString('settings','track2', inttostr(TrackBar2.Position));
+  inifile.WriteString('settings','track3', inttostr(TrackBar3.Position));
+  inifile.WriteString('settings','track4', inttostr(TrackBar4.Position));
+
+ if HD1.Checked=true then inifile.WriteString('settings','HDtex', '1')else
+ if HD2.Checked=true then inifile.WriteString('settings','HDtex', '2')else
+ if HD3.Checked=true then inifile.WriteString('settings','HDtex', '3')else
+ if HD4.Checked=true then inifile.WriteString('settings','HDtex', '4')else
+ if HD5.Checked=true then inifile.WriteString('settings','HDtex', '5')else
+ if HD6.Checked=true then inifile.WriteString('settings','HDtex', '6')else
+ if HD7.Checked=true then inifile.WriteString('settings','HDtex', '7')else
+ if HD8.Checked=true then inifile.WriteString('settings','HDtex', '8')else
+ if HD9.Checked=true then inifile.WriteString('settings','HDtex', '9')else
+ inifile.WriteString('settings','HDtex', '0');
+
+ if SD1.Checked=true then inifile.WriteString('settings','SDtex', '1')else
+ if SD2.Checked=true then inifile.WriteString('settings','SDtex', '2')else
+ if SD3.Checked=true then inifile.WriteString('settings','SDtex', '3')else
+ if SD4.Checked=true then inifile.WriteString('settings','SDtex', '4')else
+ if SD5.Checked=true then inifile.WriteString('settings','SDtex', '5')else
+ if SD6.Checked=true then inifile.WriteString('settings','SDtex', '6')else
+ if SD7.Checked=true then inifile.WriteString('settings','SDtex', '7')else
+ if SD8.Checked=true then inifile.WriteString('settings','SDtex', '8')else
+ if SD9.Checked=true then inifile.WriteString('settings','SDtex', '9')else
+ inifile.WriteString('settings','SDtex', '0');
+
+ if nude1.Checked=true then inifile.WriteString('settings','nude', '1')else
+ if nude2.Checked=true then inifile.WriteString('settings','nude', '2')else
+ if nude3.Checked=true then inifile.WriteString('settings','nude', '3')else
+ if nude4.Checked=true then inifile.WriteString('settings','nude', '4')else
+ if nude5.Checked=true then inifile.WriteString('settings','nude', '5')else
+ if nude6.Checked=true then inifile.WriteString('settings','nude', '6')else
+ if nude7.Checked=true then inifile.WriteString('settings','nude', '7')else
+ if nude8.Checked=true then inifile.WriteString('settings','nude', '8')else
+  inifile.WriteString('settings','nude', '0');
+end;
+
+procedure TForm4.FormShow(Sender: TObject);
+var
+IniFile : TIniFile;
+begin
+IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
+ if inifile.ReadString('settings','armor1', '0')='1' then armor1.Checked:=true;
+ if inifile.ReadString('settings','armor2', '0')='1' then armor2.Checked:=true;
+ if inifile.ReadString('settings','armor3', '0')='1' then armor3.Checked:=true;
+ if inifile.ReadString('settings','armor4', '0')='1' then armor4.Checked:=true;
+ if inifile.ReadString('settings','boots1', '0')='1' then boots1.Checked:=true;
+ if inifile.ReadString('settings','boots2', '0')='1' then boots2.Checked:=true;
+ if inifile.ReadString('settings','boots3', '0')='1' then boots3.Checked:=true;
+ if inifile.ReadString('settings','glowers1', '0')='1' then glowers1.Checked:=true;
+ if inifile.ReadString('settings','glowers2', '0')='1' then glowers2.Checked:=true;
+ if inifile.ReadString('settings','glowers3', '0')='1' then glowers3.Checked:=true;
+ if inifile.ReadString('settings','underwear1', '0')='1' then underwear1.Checked:=true;
+ if inifile.ReadString('settings','underwear2', '0')='1' then underwear2.Checked:=true;
+ if inifile.ReadString('settings','underwear3', '0')='1' then underwear3.Checked:=true;
+ if inifile.ReadString('settings','sorkweap1', '0')='1' then sorkweap1.Checked:=true;
+ if inifile.ReadString('settings','sorkweap2', '0')='1' then sorkweap2.Checked:=true;
+ if inifile.ReadString('settings','sorkweap3', '0')='1' then sorkweap3.Checked:=true;
+ if inifile.ReadString('settings','lifeskill2', '0')='1' then lifeskill2.Checked:=true;
+ if inifile.ReadString('settings','lifeskill1', '0')='1' then lifeskill1.Checked:=true;
+ if inifile.ReadString('settings','lowerbody1', '0')='1' then lowerbody1.Checked:=true;
+ if inifile.ReadString('settings','lowerbody2', '0')='1' then lowerbody2.Checked:=true;
+ if inifile.ReadString('settings','lowerbody3', '0')='1' then lowerbody3.Checked:=true;
+ if inifile.ReadString('settings','hats1', '0')='1' then hats1.Checked:=true;
+ if inifile.ReadString('settings','hats2', '0')='1' then hats2.Checked:=true;
+ if inifile.ReadString('settings','hats3', '0')='1' then hats3.Checked:=true;
+ if inifile.ReadString('settings','nudetamer', '0')='1' then nudetamer.Checked:=true;
+  if inifile.ReadString('settings','CheckBox1', '0')='1' then CheckBox1.Checked:=true;
+  if inifile.ReadString('settings','CheckBox2', '0')='1' then CheckBox2.Checked:=true;
+  if inifile.ReadString('settings','CheckBox3', '0')='1' then CheckBox3.Checked:=true;
+  if inifile.ReadString('settings','CheckBox4', '0')='1' then CheckBox4.Checked:=true;
+  if inifile.ReadString('settings','CheckBox5', '0')='1' then CheckBox5.Checked:=true;
+  if inifile.ReadString('settings','CheckBox6', '0')='1' then CheckBox6.Checked:=true;
+  if inifile.ReadString('settings','CheckBox7', '0')='1' then CheckBox7.Checked:=true;
+  if inifile.ReadString('settings','CheckBox8', '0')='1' then CheckBox8.Checked:=true;
+  if inifile.ReadString('settings','CheckBox9', '0')='1' then CheckBox9.Checked:=true;
+  if inifile.ReadString('settings','CheckBox10', '0')='1' then CheckBox10.Checked:=true;
+  if inifile.ReadString('settings','CheckBox11', '0')='1' then CheckBox11.Checked:=true;
+  if inifile.ReadString('settings','CheckBox12', '0')='1' then CheckBox12.Checked:=true;
+  if inifile.ReadString('settings','CheckBox13', '0')='1' then CheckBox13.Checked:=true;
+  if inifile.ReadString('settings','CheckBox14', '0')='1' then CheckBox14.Checked:=true;
+  if inifile.ReadString('settings','CheckBox15', '0')='1' then CheckBox15.Checked:=true;
+  if inifile.ReadString('settings','CheckBox16', '0')='1' then CheckBox16.Checked:=true;
+  if inifile.ReadString('settings','CheckBox17', '0')='1' then CheckBox17.Checked:=true;
+  if inifile.ReadString('settings','CheckBox18', '0')='1' then CheckBox18.Checked:=true;
+  if inifile.ReadString('settings','CheckBox19', '0')='1' then CheckBox19.Checked:=true;
+  if inifile.ReadString('settings','CheckBox20', '0')='1' then CheckBox20.Checked:=true;
+  if inifile.ReadString('settings','CheckBox21', '0')='1' then CheckBox21.Checked:=true;
+  if inifile.ReadString('settings','CheckBox22', '0')='1' then CheckBox22.Checked:=true;
+  if inifile.ReadString('settings','CheckBox23', '0')='1' then CheckBox23.Checked:=true;
+  if inifile.ReadString('settings','CheckBox24', '0')='1' then CheckBox24.Checked:=true;
+  if inifile.ReadString('settings','CheckBox25', '0')='1' then CheckBox25.Checked:=true;
+  if inifile.ReadString('settings','CheckBox26', '0')='1' then CheckBox26.Checked:=true;
+  if inifile.ReadString('settings','CheckBox27', '0')='1' then CheckBox27.Checked:=true;
+  if inifile.ReadString('settings','CheckBox28', '0')='1' then CheckBox28.Checked:=true;
+  if inifile.ReadString('settings','CheckBox29', '0')='1' then CheckBox29.Checked:=true;
+  if inifile.ReadString('settings','CheckBox30', '0')='1' then CheckBox30.Checked:=true;
+  TrackBar1.Position:=strtoint(inifile.ReadString('settings','track1', '125'));
+  TrackBar2.Position:=strtoint(inifile.ReadString('settings','track2', '135'));
+  TrackBar3.Position:=strtoint(inifile.ReadString('settings','track3', '90'));
+  TrackBar4.Position:=strtoint(inifile.ReadString('settings','track4', '100'));
+ case strtoint(inifile.ReadString('settings','HDtex', '0')) of
+  1: HD1.Checked:=true;
+  2: HD2.Checked:=true;
+  3: HD3.Checked:=true;
+  4: HD4.Checked:=true;
+  5: HD5.Checked:=true;
+  6: HD6.Checked:=true;
+  7: HD7.Checked:=true;
+  8: HD8.Checked:=true;
+  9: HD9.Checked:=true;
+ end;
+ case strtoint(inifile.ReadString('settings','SDtex', '0')) of
+  1: SD1.Checked:=true;
+  2: SD2.Checked:=true;
+  3: SD3.Checked:=true;
+  4: SD4.Checked:=true;
+  5: SD5.Checked:=true;
+  6: SD6.Checked:=true;
+  7: SD7.Checked:=true;
+  8: SD8.Checked:=true;
+  9: SD9.Checked:=true;
+ end;
+ case strtoint(inifile.ReadString('settings','nude', '0')) of
+  1: nude1.Checked:=true;
+  2: nude2.Checked:=true;
+  3: nude3.Checked:=true;
+  4: nude4.Checked:=true;
+  5: nude5.Checked:=true;
+  6: nude6.Checked:=true;
+  7: nude7.Checked:=true;
+  8: begin nude7.Checked:=true; checkbox8.Checked:=true; end;
+ end;
 end;
 
 procedure TForm4.HD1Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(0, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/full_bush/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
+
 end;
 
 procedure TForm4.HD2Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(1, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/medium_bush/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
 end;
 
 procedure TForm4.HD4Click(Sender: TObject);
+var
+  Flags, TargetFrameName, PostData, Headers: OleVariant;
 begin
-Image1.Picture:= nil;
-Imagelist1.GetBitmap(4, Image1.Picture.Bitmap);
+  WebBrowser1.Navigate('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/HD/small_bush/preview.jpg', Flags,
+    TargetFrameName, PostData, Headers);
 end;
 
 procedure TForm4.TexturePars(Sender: TObject);
@@ -330,12 +673,20 @@ end;
  if checkbox8.Checked=false then begin
  memo1.Lines.Add('удаление прошлых модов');
  try
+ ForceDirectories(GameFolder +'\live\gamecommondata\');
+ ForceDirectories(GameFolder +'\live\character\');
  TDirectory.Delete(ExtractFilePath(Application.ExeName) + '\files_to_patch\', True);
  TDirectory.Delete(ExtractFilePath(Application.ExeName) + '\Patch\', True);
+  TDirectory.Delete(GameFolder + '\live\character\', True);
+  TDirectory.Delete(GameFolder + '\live\gamecommondata\', True);
+ ForceDirectories(ExtractFilePath(Application.ExeName) + '\Patch\pac');
  finally
  memo1.Lines.Add('файлы удалены.');
  end;
  end;
+ CreateDir('Patch');
+ ForceDirectories(GameFolder +'\live\gamecommondata\');
+ ForceDirectories(GameFolder +'\live\character\');
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\texture');
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pbw');
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\phw');
@@ -344,6 +695,11 @@ end;
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pkww');
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pvw');
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pnw');
+ ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\phm');
+ ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pgm');
+ ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pkm');
+ ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pwm');
+ ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pnm');
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\Patch\pac');
  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
  memo1.Lines.Add('распаковка модов');
@@ -353,6 +709,39 @@ end;
    DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/Kibelius/pew_00_ub_0034_01_hair.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pew_00_ub_0034_01_hair.dds');
    memo1.Lines.Add('загрузка текстур. 2\2');
    DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/Kibelius/pew_00_ub_0034_hair.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pew_00_ub_0034_hair.dds');
+   CopyFile('Patch\pew_00_ub_0034_01_hair.dds','Patch\pew_00_ub_0034_01_dm_hair.dds',False);
+   CopyFile('Patch\pew_00_ub_0034_hair.dds','Patch\pew_00_ub_0034_dm_hair.dds',False);
+  end;
+   if CheckBox11.Checked=true then begin
+   memo1.Lines.Add('установка текстур Орен');
+   memo1.Lines.Add('загрузка текстур. 1\2');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/Kibelius/More/pew_00_ub_0034_01_hair.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pew_00_ub_0034_01_hair.dds');
+   memo1.Lines.Add('загрузка текстур. 2\2');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/Kibelius/More/pew_00_ub_0034_hair.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pew_00_ub_0034_hair.dds');
+   CopyFile('Patch\pew_00_ub_0034_01_hair.dds','Patch\pew_00_ub_0034_01_dm_hair.dds',False);
+   CopyFile('Patch\pew_00_ub_0034_hair.dds','Patch\pew_00_ub_0034_dm_hair.dds',False);
+  end;
+   if CheckBox12.Checked=true then begin
+   memo1.Lines.Add('установка текстур Орен Крылья');
+   memo1.Lines.Add('загрузка текстур. 1\2');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/Kibelius/pew_00_ub_0034.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pew_00_ub_0034.dds');
+   memo1.Lines.Add('загрузка текстур. 2\2');
+   ExtractRes('data', 'texture1',ExtractFilePath(Application.ExeName) +  'Patch\pvw_00_cloak_0034_hair.dds');
+  end;
+   if CheckBox13.Checked=true then begin
+   memo1.Lines.Add('установка текстур Орен Крылья');
+   memo1.Lines.Add('загрузка текстур. 1\2');
+   ExtractRes('data', 'texture1',ExtractFilePath(Application.ExeName) +  'Patch\pew_00_ub_0034.dds');
+   memo1.Lines.Add('загрузка текстур. 2\2');
+   ExtractRes('data', 'texture1',ExtractFilePath(Application.ExeName) +  'Patch\pew_00_ub_0034_hair.dds');
+   ExtractRes('data', 'texture1',ExtractFilePath(Application.ExeName) +  'Patch\pew_00_ub_0034_01_hair.dds');
+   CopyFile('Patch\pew_00_ub_0034_01_hair.dds','Patch\pew_00_ub_0034_01_dm_hair.dds',False);
+   CopyFile('Patch\pew_00_ub_0034_hair.dds','Patch\pew_00_ub_0034_dm_hair.dds',False);
+  end;
+  if CheckBox14.Checked=true then begin
+   memo1.Lines.Add('установка патч partcutdesc.xml');
+   memo1.Lines.Add('загрузка. 1\2');
+   ExtractRes('data', 'part',ExtractFilePath(Application.ExeName) +  'Patch\partcutdesc.xml');
   end;
   if form4.nude1.Checked=true then begin
    memo1.Lines.Add('установка текстур тел Follys');
@@ -640,6 +1029,32 @@ end;
    memo1.Lines.Add('загрузка текстур. 4\4');
    DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/publichair/SD/wider_trimmed/pww_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pww_01_nude_0001.dds');
   end;
+   if CheckBox27.Checked=true then begin
+   memo1.Lines.Add('установка текстур VladaGeims mod 1');
+   memo1.Lines.Add('загрузка текстур. 1\4');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/1/pbw_00_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pbw_00_nude_0001.dds');
+   memo1.Lines.Add('загрузка текстур. 2\4');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/1/pew_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pew_01_nude_0001.dds');
+   memo1.Lines.Add('загрузка текстур. 3\4');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/1/phw_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\phw_01_nude_0001.dds');
+   memo1.Lines.Add('загрузка текстур. 4\4');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/1/pww_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\pww_01_nude_0001.dds');
+  end;
+   if CheckBox28.Checked=true then begin
+   memo1.Lines.Add('установка текстур VladaGeims mod 2');
+   memo1.Lines.Add('загрузка текстур. 1\1');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/2/phw_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\phw_01_nude_0001.dds');
+  end;
+   if CheckBox29.Checked=true then begin
+   memo1.Lines.Add('установка текстур VladaGeims mod 3');
+   memo1.Lines.Add('загрузка текстур. 1\1');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/4/phw_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\phw_01_nude_0001.dds');
+  end;
+   if CheckBox30.Checked=true then begin
+   memo1.Lines.Add('установка текстур VladaGeims mod 4');
+   memo1.Lines.Add('загрузка текстур. 1\1');
+   DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/3/phw_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\phw_01_nude_0001.dds');
+  end;
   if form4.nudetamer.Checked=true then
    ExtractRes('data', 'tex81',ExtractFilePath(Application.ExeName) +  '\Patch\pbw_00_nude_0001.dds');
 
@@ -699,6 +1114,7 @@ end;
   TexturesCount:=1;
   if form4.underwear1.Checked=true then begin
    texturesall:=strtoint(inifile.ReadString('underwearall','files', '1'));
+   ExtractRes('data', 'texture0',ExtractFilePath(Application.ExeName) +  'Patch\pvw_00_uw_0001_03_dec.dds');
    while TexturesCount <= texturesall do begin
     ExtractRes('data', 'alpha',ExtractFilePath(Application.ExeName) +  'Patch\pac\'+inifile.ReadString('underwearall','file'+inttostr(TexturesCount), '1')+'.pac');
     TexturesCount:=TexturesCount+1;
@@ -710,6 +1126,7 @@ end;
   TexturesCount:=1;
   if form4.underwear2.Checked=true then begin
    texturesall:=strtoint(inifile.ReadString('underwearstarter','files', '1'));
+   ExtractRes('data', 'texture0',ExtractFilePath(Application.ExeName) +  'Patch\pvw_00_uw_0001_03_dec.dds');
    while TexturesCount <= texturesall do begin
     ExtractRes('data', 'alpha',ExtractFilePath(Application.ExeName) +  'Patch\pac\'+inifile.ReadString('underwearstarter','file'+inttostr(TexturesCount), '1')+'.pac');
     TexturesCount:=TexturesCount+1;
@@ -1074,7 +1491,6 @@ end;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
   if form4.checkbox6.checked=true then begin
-   memo1.Lines.Add('установка мода на грудь маэвы');
    ExtractRes('data', 'breast1',ExtractFilePath(Application.ExeName) +  'Patch\customizationboneparamdesc_bladewomentest.xml');
     state1:='	<ParamDesc Index="143" Min="0.70 0.70 0.70" Max="';
     state1:=state1+form4.label2.caption+' '+form4.label2.caption+' '+form4.label2.caption;
@@ -1118,6 +1534,49 @@ end;
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\bladewomentest\customizationboneparamdesc_bladewomentest.xml');
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
+   if form4.checkbox6.checked=true then begin
+   memo1.Lines.Add('установка мода на грудь маэвы');
+   ExtractRes('data', 'breast7',ExtractFilePath(Application.ExeName) +  'Patch\customizationboneparamdesc_blawomen.xml');
+    state1:='	<ParamDesc Index="197" Min="0.62 0.62 0.62" Max="';
+    state1:=state1+form4.label2.caption+' '+form4.label2.caption+' '+form4.label2.caption;
+    state1:=state1+'" Default="0.82 0.73 0.73" BoneName="Bip01 L Breast" PartName="base_basebody" Component="S"/>';
+    state2:='	<ParamDesc Index="198" Min="0.62 0.62 0.62" Max="';
+    state2:=state2+form4.label2.caption+' '+form4.label2.caption+' '+form4.label2.caption;
+    state2:=state2+'" Default="0.82 0.73 0.73" BoneName="Bip01 R Breast" PartName="base_basebody" Component="S"/>';
+    Memo2.Lines.Clear;
+    Memo2.Lines.LoadFromFile('Patch\customizationboneparamdesc_blawomen.xml');
+    Memo2.Lines[213]:=state1;
+    Memo2.Lines[214]:=state2;
+    state1:='	<ParamDesc Index="132" Min="0.90 0.68 0.68" Max="';
+    state1:=state1+label6.caption+' '+label6.caption+' '+label6.caption;
+    state1:=state1+'" Default="0.97 0.90 0.90" BoneName="Bip01 L Thigh" PartName="base_basebody" ';
+    state1:=state1+'Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>';
+    state2:='	<ParamDesc Index="133" Min="0.90 0.68 0.68" Max="';
+    state2:=state2+label6.caption+' '+label6.caption+' '+label6.caption;
+    state2:=state2+'" Default="0.97 0.90 0.90" BoneName="Bip01 R Thigh" PartName="base_basebody" ';
+    state2:=state2+'Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>';
+    Memo2.Lines[148]:=state1;
+    Memo2.Lines[149]:=state2;
+    state1:='	<ParamDesc Index="137" Min="0.90 0.90 0.85" Max="';
+    state1:=state1+label7.caption+' '+label7.caption+' '+label7.caption;
+    state1:=state1+'" Default="0.98 0.95 0.90" BoneName="Bip01 Pelvis" PartName="base_basebody" ';
+    state1:=state1+'Component="S" HeightAxis="X" WeightAxis01="Y" WeightAxis02="Z"/>';
+    Memo2.Lines[153]:=state1;
+    state1:='	<ParamDesc Index="141" Min="0.90 0.90 0.90" Max="';
+    state1:=state1+label8.caption+' '+label8.caption+' '+label8.caption;
+    state1:=state1+'" Default="1.00 1.00 1.00" BoneName="Bip01 L Hip" PartName="base_basebody" ';
+    state1:=state1+'Component="S" WeightAxis01="Y" WeightAxis02="Z" WeightAxis03="X"/>';
+    state2:='	<ParamDesc Index="142" Min="0.90 0.90 0.90" Max="';
+    state2:=state2+label8.caption+' '+label8.caption+' '+label8.caption;
+    state2:=state2+'" Default="1.00 1.00 1.00" BoneName="Bip01 R Hip" PartName="base_basebody" ';
+    state2:=state2+'Component="S" WeightAxis01="Y" WeightAxis02="Z" WeightAxis03="X"/>';
+    Memo2.Lines[157]:=state1;
+    Memo2.Lines[158]:=state2;
+    Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_blawomen.xml');
+    ForceDirectories(GameFolder +'\live\gamecommondata\customization\bladewomen');
+    Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\bladewomen\customizationboneparamdesc_blawomen.xml');
+    memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
+  end;
   memo1.Lines.Add('копирование текстур');
   if FindFirst('Patch\*.dds',faAnyFile,SR) = 0 then
   repeat
@@ -1142,21 +1601,31 @@ end;
     if FindFirst('Patch\pac\*.pac',faAnyFile,SR) = 0 then
   repeat
     memo1.Lines.Add(SR.name);
-    if pos('pbw', SR.Name)<>0 then
+    if (pos('pbw', SR.Name)<>0) and (Checkbox17.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pbw\'+SR.name)),False)
-   else if pos('phw', SR.Name)<>0 then
+   else if (pos('phw', SR.Name)<>0) and (Checkbox16.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\phw\'+SR.name)),False)
-   else if pos('pew', SR.Name)<>0 then
+   else if (pos('pew', SR.Name)<>0) and (Checkbox15.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pew\'+SR.name)),False)
-   else if pos('pww', SR.Name)<>0 then
+   else if (pos('pww', SR.Name)<>0) and (Checkbox20.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pww\'+SR.name)),False)
-   else if pos('pkww', SR.Name)<>0 then
+   else if (pos('pkww', SR.Name)<>0) and (Checkbox18.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pkww\'+SR.name)),False)
-   else if pos('pvw', SR.Name)<>0 then
+   else if (pos('pvw', SR.Name)<>0) and (Checkbox19.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pvw\'+SR.name)),False)
-   else if pos('pnw', SR.Name)<>0 then
+   else if (pos('pnw', SR.Name)<>0) and (Checkbox21.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pnw\'+SR.name)),False)
-   else  CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\'+SR.name)),False);
+   else if (pos('phm', SR.Name)<>0) and (Checkbox22.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\phm\'+SR.name)),False)
+   else if (pos('pgm', SR.Name)<>0) and (Checkbox23.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pgm\'+SR.name)),False)
+   else if (pos('pkm', SR.Name)<>0) and (Checkbox24.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pkm\'+SR.name)),False)
+   else if (pos('pwm', SR.Name)<>0) and (Checkbox25.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pwm\'+SR.name)),False)
+   else if (pos('pnm', SR.Name)<>0) and (Checkbox26.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pnm\'+SR.name)),False)
+   else memo1.Lines.Add('skip file');
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
     Application.ProcessMessages;
   until FindNext(SR) <> 0;
@@ -1184,6 +1653,11 @@ end;
  ForceDirectories(GameFolder + '\live\character\pkww');
  ForceDirectories(GameFolder + '\live\character\pvw');
  ForceDirectories(GameFolder + '\live\character\pnw');
+ ForceDirectories(GameFolder + '\live\character\phm');
+ ForceDirectories(GameFolder + '\live\character\pgm');
+ ForceDirectories(GameFolder + '\live\character\pkm');
+ ForceDirectories(GameFolder + '\live\character\pwm');
+ ForceDirectories(GameFolder + '\live\character\pnm');
   if FindFirst('Patch\*.dds',faAnyFile,SR) = 0 then
   repeat
     memo1.Lines.Add(SR.name);
@@ -1205,21 +1679,31 @@ end;
     if FindFirst('Patch\pac\*.pac',faAnyFile,SR) = 0 then
   repeat
     memo1.Lines.Add(SR.name);
-    if pos('pbw', SR.Name)<>0 then
+    if (pos('pbw', SR.Name)<>0) and (Checkbox17.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pbw\'+SR.name)),False)
-   else if pos('phw', SR.Name)<>0 then
+   else if (pos('phw', SR.Name)<>0) and (Checkbox16.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\phw\'+SR.name)),False)
-   else if pos('pew', SR.Name)<>0 then
+   else if (pos('pew', SR.Name)<>0) and (Checkbox15.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pew\'+SR.name)),False)
-   else if pos('pww', SR.Name)<>0 then
+   else if (pos('pww', SR.Name)<>0) and (Checkbox20.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pww\'+SR.name)),False)
-   else if pos('pkww', SR.Name)<>0 then
+   else if (pos('pkww', SR.Name)<>0) and (Checkbox18.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pkww\'+SR.name)),False)
-   else if pos('pvw', SR.Name)<>0 then
+   else if (pos('pvw', SR.Name)<>0) and (Checkbox19.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pvw\'+SR.name)),False)
-   else if pos('pnw', SR.Name)<>0 then
+   else if (pos('pnw', SR.Name)<>0) and (Checkbox21.Checked = true) then
      CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pnw\'+SR.name)),False)
-   else  CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\'+SR.name)),False);
+   else if (pos('phm', SR.Name)<>0) and (Checkbox22.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\phm\'+SR.name)),False)
+   else if (pos('pgm', SR.Name)<>0) and (Checkbox23.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pgm\'+SR.name)),False)
+   else if (pos('pkm', SR.Name)<>0) and (Checkbox24.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pkm\'+SR.name)),False)
+   else if (pos('pwm', SR.Name)<>0) and (Checkbox25.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pwm\'+SR.name)),False)
+   else if (pos('pnm', SR.Name)<>0) and (Checkbox26.Checked = true) then
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pnm\'+SR.name)),False)
+   else memo1.Lines.Add('skip file');
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
     Application.ProcessMessages;
   until FindNext(SR) <> 0;
@@ -1231,32 +1715,39 @@ procedure TForm4.TrackBar1Change(Sender: TObject);
 var a:real;
 begin
 a:=trackbar1.Position/100;
-label1.Caption:='грудь : '+floattostr(a);
-label2.Caption:=StringReplace(floattostr(a), ',', '.',[rfReplaceAll,rfIgnoreCase]);
+label1.Caption:='грудь : '+floattostrF(a,ffFixed,10,2);
+label2.Caption:=StringReplace(floattostrF(a,ffFixed,10,2), ',', '.',[rfReplaceAll,rfIgnoreCase]);
 end;
 
 procedure TForm4.TrackBar2Change(Sender: TObject);
 var a:real;
 begin
 a:=trackbar2.Position/100;
-label3.Caption:='бедра : '+floattostr(a);
-label6.Caption:=StringReplace(floattostr(a), ',', '.',[rfReplaceAll,rfIgnoreCase]);
+label3.Caption:='бедра : '+floattostrF(a,ffFixed,10,2);
+label6.Caption:=StringReplace(floattostrF(a,ffFixed,10,2), ',', '.',[rfReplaceAll,rfIgnoreCase]);
 end;
 
 procedure TForm4.TrackBar3Change(Sender: TObject);
 var a:real;
 begin
 a:=trackbar3.Position/100;
-label4.Caption:='таз : '+floattostr(a);
-label7.Caption:=StringReplace(floattostr(a), ',', '.',[rfReplaceAll,rfIgnoreCase]);
+label4.Caption:='таз : '+floattostrF(a,ffFixed,10,2);
+label7.Caption:=StringReplace(floattostrF(a,ffFixed,10,2), ',', '.',[rfReplaceAll,rfIgnoreCase]);
 end;
 
 procedure TForm4.TrackBar4Change(Sender: TObject);
 var a:real;
 begin
 a:=trackbar4.Position/100;
-label5.Caption:='попка : '+floattostr(a);
-label8.Caption:=StringReplace(floattostr(a), ',', '.',[rfReplaceAll,rfIgnoreCase]);
+label5.Caption:='попка : '+floattostrF(a,ffFixed,10,2);
+label8.Caption:=StringReplace(floattostrF(a,ffFixed,10,2), ',', '.',[rfReplaceAll,rfIgnoreCase]);
+end;
+
+procedure TForm4.WebBrowser1DocumentComplete(ASender: TObject;
+  const pDisp: IDispatch; const URL: OleVariant);
+begin
+ WebBrowser1.OleObject.document.body.style.overflowX := 'hidden';
+WebBrowser1.OleObject.document.body.style.overflowY := 'hidden';
 end;
 
 end.

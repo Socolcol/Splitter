@@ -302,6 +302,10 @@ object Form1: TForm1
       Caption = #1087#1072#1090#1095
       OnClick = N2Click
     end
+    object N8: TMenuItem
+      Caption = #1086#1073#1085#1086#1074#1080#1090#1100' '#1087#1072#1090#1095
+      OnClick = N8Click
+    end
     object N3: TMenuItem
       Caption = #1076#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1086
       object N4: TMenuItem
@@ -312,6 +316,10 @@ object Form1: TForm1
         Caption = #1089#1073#1088#1086#1089' '#1083#1072#1091#1085#1095#1077#1088#1072
         OnClick = Button3Click
       end
+      object ReShade1: TMenuItem
+        Caption = 'ReShade'
+        OnClick = ReShade1Click
+      end
     end
     object N6: TMenuItem
       Caption = #1086' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
@@ -319,11 +327,7 @@ object Form1: TForm1
     end
     object N7: TMenuItem
       Caption = #1089#1074#1077#1088#1085#1091#1090#1100
-      OnClick = Button1Click
-    end
-    object N8: TMenuItem
-      Caption = #1074#1099#1093#1086#1076
-      OnClick = N8Click
+      OnClick = N7Click
     end
     object N9: TMenuItem
       Caption = #1089#1082#1072#1095#1072#1090#1100' '#1086#1073#1085#1086#1074#1083#1077#1085#1080#1077

@@ -31,8 +31,8 @@ type
     IdHTTP1: TIdHTTP;
     N9: TMenuItem;
     IdAntiFreeze1: TIdAntiFreeze;
+    ReShade1: TMenuItem;
     procedure Timer1Timer(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
     procedure show1Click(Sender: TObject);
     procedure close1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -42,10 +42,11 @@ type
     procedure N8Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
-    procedure test1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure N9Click(Sender: TObject);
     procedure N2Click(Sender: TObject);
+    procedure ReShade1Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,16 +55,17 @@ type
 
 var
   Form1: TForm1;
-  gamer,patch1 : integer;
+  gamer,patch1,TimerPath : integer;
   FileName: string = '';   //для лога
   DateTime1,DateTime2:TDateTime;
   AppData,UpdateURL,GameFolder,razr:string;
+  H: THandle;
 
 implementation
 
 {$R *.dfm}
 
-uses Unit2, Modemenu, Path;
+uses Unit2, Modemenu, Path, Unit3;
 {$R data.RES}
 
 function IsRunning(sName: string): boolean;
@@ -233,11 +235,6 @@ begin
   memo2.Clear;
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
-begin
-form1.Hide;
-end;
-
 procedure TForm1.Button3Click(Sender: TObject);
 begin
  CopyFile('files\pad00000.meta.ori',PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),False);
@@ -298,12 +295,20 @@ if inifile.ReadString('Global','X', '0') = '0' then begin
  inifile.WriteString('Global','X', razr);
 end else razr:=inifile.ReadString('Global','X', '64');
 
+if inifile.ReadString('Global','Timer', '0') <> '0' then begin
+  memo1.Lines.Add('время таймера измененно, значение:'+inifile.ReadString('Global','Timer', '0'));
+  TimerPath:= strtoint(inifile.ReadString('Global','Timer', '0'));
+end else begin
+ TimerPath:=30000;
+ inifile.WriteString('Global','Timer', '0');
+end;
+
 if FileExists('files\pad00000.meta.ori') then
 memo1.Lines.Add('оригинальный файл найден!')
 else begin memo1.Lines.Add('оригинальный файл не найден.');
-  memo1.Lines.Add('для продолжения работы нажмите кнопку патч!');
-  memo1.Lines.Add('');
   memo1.Lines.Add('приложение остановлено.');
+  memo1.Lines.Add('');
+  memo1.Lines.Add('для продолжения работы нажмите кнопку патч!');
   PopupMenu1.Items[0].Caption:='ошибка!';
   exit;
 end;
@@ -311,9 +316,9 @@ end;
 if FileExists('files\pad00000.meta.bak') then
 memo1.Lines.Add('редактированный файл найден!')
 else begin memo1.Lines.Add('редактированный файл не найден.');
-  memo1.Lines.Add('для продолжения работы нажмите кнопку патч!');
-  memo1.Lines.Add('');
   memo1.Lines.Add('приложение остановлено.');
+  memo1.Lines.Add('');
+  memo1.Lines.Add('для продолжения работы нажмите кнопку патч!');
   PopupMenu1.Items[0].Caption:='ошибка!';
   exit;
 end;
@@ -325,6 +330,8 @@ memo1.Lines.Add('последний запуск: '+DateTimeTostr(DateTime1));
 except
 memo1.Lines.Add('игра не найдена');
 memo1.Lines.Add('приложение остановлено.');
+memo1.Lines.Add('');
+memo1.Lines.Add('возможно игра была удалена. или путь до папки BlackDesert указан не верно');
 PopupMenu1.Items[0].Caption:='ошибка!';
 exit;
 end;
@@ -348,17 +355,28 @@ begin
   memo1.Lines.Add('где-то есть новая версия: '+pars('Ver:',HashString,':Ver'));
   N9.Visible:=true;
   UpdateURL:=pars('URL:',HashString,':URL');
-  end
-  else if pars('CRC32:',HashString,':CRC32') <> CRC32('Splitter.exe') then begin
-  memo1.Lines.Add('возможно Splitter.exe был поврежден');
-  timer1.Enabled:=false;
-  memo1.Lines.Add('приложение остановленно');
   end;
+  //else if pars('CRC32:',HashString,':CRC32') <> CRC32('Splitter.exe') then begin
+  //memo1.Lines.Add('возможно Splitter.exe был поврежден');
+  //timer1.Enabled:=false;
+  //memo1.Lines.Add('приложение остановленно');
+// end;
   if pars('MSG:',HashString,':MSG') > '' then memo1.Lines.Add(pars('MSG:',HashString,':MSG'));
+  try
+  if pars('Meta:',HashString,':Meta') <> CRC32('Files\pad00000.meta.ori') then
+  if pars('Meta:',HashString,':Meta') = CRC32(GameFolder+ '\live\Paz\pad00000.meta') then
+   memo1.Lines.Add('возможно клиент игры был обновлен. обновите патч');
+  except
+    memo1.Lines.Add('не удалось проверить мета файл');
+  end;
 end;
 
 procedure TForm1.N2Click(Sender: TObject);
 begin
+ if (IsRunning('BlackDesert'+razr+'.exe')) then begin
+  memo1.Lines.Add('невозможно поставить патч при запущенной игре!');
+  exit;
+ end;
 form4.Show;
 end;
 
@@ -373,6 +391,8 @@ begin
  memo2.Lines.Add('Bak aha256 '+ CRC32('files\pad00000.meta.bak'));
  memo2.Lines.Add('---->>директории>>');
  GetAllFiles(ExtractFileDir(ParamStr(0)));
+ memo2.Lines.Add('---->>директории игры>>');
+ GetAllFiles(GameFolder);
  memo2.Lines.Add('---->>лог приложения>>');
  logpos:=0;
  while logpos<= memo1.Lines.Count do begin
@@ -399,9 +419,32 @@ begin
 form2.show;
 end;
 
+procedure TForm1.N7Click(Sender: TObject);
+begin
+form1.Hide;
+end;
+
 procedure TForm1.N8Click(Sender: TObject);
 begin
-application.Terminate;
+ if (IsRunning('BlackDesert'+razr+'.exe')) then begin
+  memo1.Lines.Add('невозможно поставить патч при запущенной игре!');
+  exit;
+ end;
+ memo1.Lines.Add('фастпатч запущен.');
+ memo1.Lines.Add('копирование мета файла');
+ CopyFile(PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),'pad00000.meta',False);
+ CopyFile(PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),'files\pad00000.meta.ori',False);
+ memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
+ memo1.Lines.Add('запуск инжектора');
+ Sleep(200);
+ ShellExecute(Handle, 'open', 'injector.exe', nil, nil, SW_SHOW);
+ Sleep(1000);
+ while IsRunning('injector.exe') do begin end;
+ memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
+ memo1.Lines.Add('копирование мета файла');
+ CopyFile('pad00000.meta','files\pad00000.meta.bak',False);
+ memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
+ memo1.Lines.Add('фастпатч завершен.');
 end;
 
 procedure TForm1.N9Click(Sender: TObject);
@@ -409,14 +452,14 @@ begin
 ShellExecute(application.Handle,'Open',PWideChar(WideString(updateURL)),Nil,Nil,SW_SHOWDEFAULT);
 end;
 
+procedure TForm1.ReShade1Click(Sender: TObject);
+begin
+form3.Show;
+end;
+
 procedure TForm1.show1Click(Sender: TObject);
 begin
 form1.Show;
-end;
-
-procedure TForm1.test1Click(Sender: TObject);
-begin
-Form3.Show;
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);
@@ -430,11 +473,17 @@ begin
    CopyFile(PWideChar(WideString(AppData)),'files\torrent.resume',False);
    gamer:=1;
    DateTime1:=DateTime2;
+   if CRC32(GameFolder+ '\live\Paz\pad00000.meta') <> CRC32('Files\pad00000.meta.ori') then
+   if CRC32(GameFolder+ '\live\Paz\pad00000.meta') <> CRC32('Files\pad00000.meta.bak') then begin
+     memo1.Lines.Add('патч остановлен!');
+     memo1.Lines.Add('завершите игру и обновите пач.');
+     exit;
+   end;
    CopyFile('files\pad00000.meta.bak',PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),False);
    memo1.Lines.Add('патч установлен!');
    memo1.Lines.Add('ожидание запуска игры...');
    PopupMenu1.Items[0].Caption:='в игре...';
-   timer1.Interval:=30000;
+   timer1.Interval:=TimerPath;
    Memo1.Perform(EM_LINESCROLL,0,Memo1.Lines.Count-1);
    exit;
   end;
@@ -442,10 +491,11 @@ begin
  if (IsRunning('BlackDesert'+razr+'.exe')) then begin
   if gamer=0 then begin
    gamer:=2;
-   CopyFile('files\pad00000.meta.bak',PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),False);
-   memo1.Lines.Add('патч установлен! (почти..)');
+//   pyFile('files\pad00000.meta.bak',PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),False);
+   memo1.Lines.Add('игра запущена не корректно!');
    PopupMenu1.Items[0].Caption:='ошибка!';
-   timer1.Interval:=9000;
+   timer1.Enabled:=false;
+   memo1.Lines.Add('завершите игру, перезапустите сплиттер.');
    DateTime1:=DateTime2;
    exit;
   end

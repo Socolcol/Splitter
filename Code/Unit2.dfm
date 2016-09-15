@@ -47,11 +47,11 @@ object Form2: TForm2
     OnMouseLeave = Label2MouseLeave
   end
   object Label3: TLabel
-    Left = 478
+    Left = 484
     Top = 381
     Width = 39
     Height = 13
-    Caption = 'Ver. 2.0'
+    Caption = 'Ver. 2.5'
   end
   object Label4: TLabel
     Left = 8
@@ -125,7 +125,7 @@ object Form2: TForm2
   object Label20: TLabel
     Left = 8
     Top = 134
-    Width = 484
+    Width = 465
     Height = 26
     Caption = 
       #1076#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1086' -> '#1089#1086#1079#1076#1072#1090#1100' '#1083#1086#1075' - '#1089#1086#1079#1076#1072#1077#1090' '#1092#1072#1081#1083' Debug.log '#1074' '#1087#1072#1087#1082#1077' '#1089#1087 +
@@ -136,7 +136,7 @@ object Form2: TForm2
   object Label21: TLabel
     Left = 8
     Top = 167
-    Width = 484
+    Width = 463
     Height = 26
     Caption = 
       #1076#1086#1087#1086#1083#1085#1080#1090#1077#1083#1100#1085#1086' -> '#1089#1073#1088#1086#1089' '#1083#1072#1091#1085#1095#1077#1088#1072' - '#1077#1089#1083#1080' '#1074#1076#1088#1091#1075' '#1083#1072#1091#1085#1095#1077#1088' '#1095#1090#1086' '#1076#1086#1083#1075#1086' '#1087 +
@@ -169,9 +169,9 @@ object Form2: TForm2
   object Label25: TLabel
     Left = 8
     Top = 344
-    Width = 208
+    Width = 219
     Height = 13
-    Caption = #1089#1076#1077#1083#1072#1085#1085#1086' '#1076#1083#1103' '#1089#1072#1081#1090#1072' adultmodslocalized.ru'
+    Caption = #1089#1087#1077#1094#1080#1072#1083#1100#1085#1086' '#1076#1083#1103' '#1089#1072#1081#1090#1072' adultmodslocalized.ru'
   end
   object Label26: TLabel
     Left = 8
