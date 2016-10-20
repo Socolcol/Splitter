@@ -2,7 +2,7 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = #1074#1099#1073#1086#1088' '#1084#1086#1076#1086#1074
-  ClientHeight = 401
+  ClientHeight = 415
   ClientWidth = 800
   Color = clBtnHighlight
   Font.Charset = DEFAULT_CHARSET
@@ -19,15 +19,15 @@ object Form4: TForm4
     Left = 0
     Top = 0
     Width = 800
-    Height = 401
-    ActivePage = TabSheet1
+    Height = 415
+    ActivePage = TabSheet3
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1086#1076#1077#1078#1076#1072
       object GroupBox1: TGroupBox
         Left = 3
-        Top = 186
+        Top = 202
         Width = 153
         Height = 113
         Caption = #1076#1086#1089#1087#1077#1093#1080
@@ -69,7 +69,7 @@ object Form4: TForm4
       end
       object GroupBox4: TGroupBox
         Left = 162
-        Top = 186
+        Top = 202
         Width = 153
         Height = 89
         Caption = #1073#1086#1090#1080#1085#1082#1080
@@ -103,7 +103,7 @@ object Form4: TForm4
       end
       object GroupBox3: TGroupBox
         Left = 321
-        Top = 186
+        Top = 202
         Width = 153
         Height = 89
         Caption = #1087#1077#1088#1095#1072#1090#1082#1080
@@ -137,7 +137,7 @@ object Form4: TForm4
       end
       object GroupBox2: TGroupBox
         Left = 480
-        Top = 186
+        Top = 202
         Width = 153
         Height = 89
         Caption = #1085#1080#1078#1085#1077#1077' '#1073#1077#1083#1100#1077
@@ -170,8 +170,8 @@ object Form4: TForm4
         end
       end
       object GroupBox6: TGroupBox
-        Left = 639
-        Top = 186
+        Left = 640
+        Top = 202
         Width = 149
         Height = 89
         Caption = #1072#1084#1091#1083#1077#1090#1099'\'#1090#1072#1083#1080#1089#1084#1072#1085#1099' '#1089#1086#1088#1082#1080
@@ -205,7 +205,7 @@ object Form4: TForm4
       end
       object GroupBox5: TGroupBox
         Left = 3
-        Top = 305
+        Top = 321
         Width = 153
         Height = 65
         Caption = #1088#1072#1073#1086#1095#1080#1077' '#1082#1086#1089#1090#1102#1084#1099
@@ -231,7 +231,7 @@ object Form4: TForm4
       end
       object GroupBox8: TGroupBox
         Left = 162
-        Top = 281
+        Top = 297
         Width = 153
         Height = 89
         Caption = #1085#1086#1075#1080'\'#1095#1091#1083#1082#1080'\'#1102#1073#1082#1080
@@ -265,7 +265,7 @@ object Form4: TForm4
       end
       object GroupBox9: TGroupBox
         Left = 321
-        Top = 281
+        Top = 297
         Width = 153
         Height = 89
         Caption = #1096#1083#1103#1087#1082#1080
@@ -408,6 +408,32 @@ object Form4: TForm4
           Height = 17
           Caption = #1053#1080#1085#1076#1079#1103
           TabOrder = 4
+        end
+      end
+      object GroupBox13: TGroupBox
+        Left = 3
+        Top = 155
+        Width = 786
+        Height = 41
+        Caption = #1083#1080#1089#1090' '#1084#1086#1076#1086#1074
+        TabOrder = 10
+        object list1: TRadioButton
+          Left = 11
+          Top = 21
+          Width = 272
+          Height = 17
+          Caption = #1083#1080#1089#1090' 1 ('#1089#1090#1072#1088#1099#1081', '#1090#1086#1083#1100#1082#1086' '#1078#1077#1085#1089#1082#1080#1077' '#1087#1077#1088#1089#1099')'
+          Checked = True
+          TabOrder = 0
+          TabStop = True
+        end
+        object list2: TRadioButton
+          Left = 297
+          Top = 21
+          Width = 160
+          Height = 17
+          Caption = #1083#1080#1089#1090' 2 ('#1085#1086#1074#1099#1081', '#1086#1073#1072' '#1087#1086#1083#1072')'
+          TabOrder = 1
         end
       end
     end
@@ -1006,7 +1032,7 @@ object Form4: TForm4
       ImageIndex = 3
       object Memo2: TMemo
         Left = 0
-        Top = 326
+        Top = 340
         Width = 792
         Height = 47
         Align = alBottom
@@ -1023,7 +1049,7 @@ object Form4: TForm4
         Left = 0
         Top = 0
         Width = 792
-        Height = 326
+        Height = 340
         Align = alClient
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText

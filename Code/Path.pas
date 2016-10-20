@@ -131,6 +131,9 @@ type
     CheckBox29: TCheckBox;
     CheckBox30: TCheckBox;
     Label11: TLabel;
+    GroupBox13: TGroupBox;
+    list1: TRadioButton;
+    list2: TRadioButton;
     procedure TrackBar1Change(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure TexturePars(Sender: TObject);
@@ -444,6 +447,10 @@ IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
  if nude7.Checked=true then inifile.WriteString('settings','nude', '7')else
  if nude8.Checked=true then inifile.WriteString('settings','nude', '8')else
   inifile.WriteString('settings','nude', '0');
+
+  if list1.Checked=true then inifile.WriteString('settings','list', '1')else
+ if list2.Checked=true then inifile.WriteString('settings','list', '2')else
+  inifile.WriteString('settings','nude', '0');
 end;
 
 procedure TForm4.FormShow(Sender: TObject);
@@ -520,6 +527,10 @@ IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
   7: HD7.Checked:=true;
   8: HD8.Checked:=true;
   9: HD9.Checked:=true;
+ end;
+  case strtoint(inifile.ReadString('settings','list', '0')) of
+  1: list1.Checked:=true;
+  2: list2.Checked:=true;
  end;
  case strtoint(inifile.ReadString('settings','SDtex', '0')) of
   1: SD1.Checked:=true;
@@ -644,7 +655,8 @@ begin
  memo1.Lines.Add('извлечение пакетов');
  ExtractRes('data', 'names',ExtractFilePath(Application.ExeName) +  '\patcher_resources\names.txt');
  ExtractRes('EXEFILE', 'injector',ExtractFilePath(Application.ExeName) +  '\injector.exe');
- ExtractRes('data', 'modlist',ExtractFilePath(Application.ExeName) +  '\Files\modlist.ini');
+ if list1.Checked=true then ExtractRes('data', 'modlist',ExtractFilePath(Application.ExeName) +  '\Files\modlist.ini');
+ if list2.Checked=true then ExtractRes('data', 'modlist2',ExtractFilePath(Application.ExeName) +  '\Files\modlist.ini');
  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
  if FileExists('patcher_resources\hashes.txt') then  memo1.Lines.Add('проверка хешей')
 else  begin

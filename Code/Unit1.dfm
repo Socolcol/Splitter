@@ -33,6 +33,7 @@ object Form1: TForm1
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 0
+    OnKeyDown = Memo1KeyDown
   end
   object Memo2: TMemo
     Left = 0
@@ -316,9 +317,9 @@ object Form1: TForm1
         Caption = #1089#1073#1088#1086#1089' '#1083#1072#1091#1085#1095#1077#1088#1072
         OnClick = Button3Click
       end
-      object ReShade1: TMenuItem
-        Caption = 'ReShade'
-        OnClick = ReShade1Click
+      object N10: TMenuItem
+        Caption = #1079#1072#1082#1088#1099#1090#1100' '#1080#1075#1088#1091
+        OnClick = N10Click
       end
     end
     object N6: TMenuItem

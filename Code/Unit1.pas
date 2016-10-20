@@ -31,7 +31,7 @@ type
     IdHTTP1: TIdHTTP;
     N9: TMenuItem;
     IdAntiFreeze1: TIdAntiFreeze;
-    ReShade1: TMenuItem;
+    N10: TMenuItem;
     procedure Timer1Timer(Sender: TObject);
     procedure show1Click(Sender: TObject);
     procedure close1Click(Sender: TObject);
@@ -47,6 +47,8 @@ type
     procedure N2Click(Sender: TObject);
     procedure ReShade1Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
+    procedure Memo1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure N10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -156,6 +158,24 @@ begin
   ForS := Copy(ForS, a, Length(ForS) - a + 1);
   b := Pos(_T, ForS);
   if b > 0 then Result := Copy(ForS, 1, b - 1);
+end;
+
+function KillProcess(ExeName: string): LongBool;
+var
+ B: Bool;
+ ProcList: THandle;
+ PE: TProcessEntry32;
+begin
+ Result := False;
+ ProcList := CreateToolHelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+ PE.dwSize := SizeOf(PE);
+ B := Process32First(ProcList, PE);
+ while B do begin
+   if (UpperCase(PE.szExeFile) = UpperCase(ExtractFileName(ExeName))) then
+     Result := TerminateProcess(OpenProcess($0001, False, PE.th32ProcessID), 0);
+    B := Process32Next(ProcList, PE);
+ end;
+ CloseHandle(ProcList);
 end;
 
 procedure ExtractRes(ResType, ResName, ResNewName : String);
@@ -369,6 +389,17 @@ begin
   except
     memo1.Lines.Add('не удалось проверить мета файл');
   end;
+end;
+
+procedure TForm1.Memo1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+ if key=50 then form4.Show;
+end;
+
+procedure TForm1.N10Click(Sender: TObject);
+begin
+KillProcess('BlackDesert'+razr+'.exe');
 end;
 
 procedure TForm1.N2Click(Sender: TObject);
