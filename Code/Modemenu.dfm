@@ -2811,9 +2811,6 @@ object Form3: TForm3
         Height = 442
         Align = alClient
         TabOrder = 0
-        ExplicitTop = 88
-        ExplicitWidth = 867
-        ExplicitHeight = 386
       end
       object Panel1: TPanel
         Left = 0

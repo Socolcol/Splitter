@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, IniFiles, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, TlHelp32, ShellAPI,
   IdBaseComponent, IdComponent, FileCtrl, IOUtils, IdTCPConnection, IdTCPClient, IdHTTP,
-  Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, Vcl.OleCtrls, SHDocVw;
+  Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, Vcl.OleCtrls, SHDocVw,
+  IdAntiFreezeBase, Vcl.IdAntiFreeze;
 
 type
   TForm4 = class(TForm)
@@ -63,14 +64,12 @@ type
     nude6: TRadioButton;
     nude3: TRadioButton;
     nude4: TRadioButton;
-    nudetamer: TCheckBox;
     nude5: TRadioButton;
     nude7: TRadioButton;
     nude8: TRadioButton;
     nude9: TRadioButton;
     TabSheet4: TTabSheet;
     Label2: TLabel;
-    Memo1: TMemo;
     Button2: TButton;
     IdHTTP1: TIdHTTP;
     Memo2: TMemo;
@@ -131,9 +130,9 @@ type
     CheckBox29: TCheckBox;
     CheckBox30: TCheckBox;
     Label11: TLabel;
-    GroupBox13: TGroupBox;
-    list1: TRadioButton;
-    list2: TRadioButton;
+    CheckBox31: TCheckBox;
+    memo1: TRichEdit;
+    CheckBox32: TCheckBox;
     procedure TrackBar1Change(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure TexturePars(Sender: TObject);
@@ -171,7 +170,7 @@ var
 implementation
 
 {$R *.dfm}
-{$R data.RES}
+{$R DataRes.RES}
 
 uses Unit1;
 
@@ -348,8 +347,6 @@ IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
   else inifile.WriteString('settings','hats2', '0');
  if hats3.Checked=true then inifile.WriteString('settings','hats3', '1')
   else inifile.WriteString('settings','hats3', '0');
- if nudetamer.Checked=true then inifile.WriteString('settings','nudetamer', '1')
-  else inifile.WriteString('settings','nudetamer', '0');
 
  if CheckBox1.Checked=true then inifile.WriteString('settings','CheckBox1', '1')
   else inifile.WriteString('settings','CheckBox1', '0');
@@ -448,9 +445,6 @@ IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
  if nude8.Checked=true then inifile.WriteString('settings','nude', '8')else
   inifile.WriteString('settings','nude', '0');
 
-  if list1.Checked=true then inifile.WriteString('settings','list', '1')else
- if list2.Checked=true then inifile.WriteString('settings','list', '2')else
-  inifile.WriteString('settings','nude', '0');
 end;
 
 procedure TForm4.FormShow(Sender: TObject);
@@ -482,7 +476,6 @@ IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
  if inifile.ReadString('settings','hats1', '0')='1' then hats1.Checked:=true;
  if inifile.ReadString('settings','hats2', '0')='1' then hats2.Checked:=true;
  if inifile.ReadString('settings','hats3', '0')='1' then hats3.Checked:=true;
- if inifile.ReadString('settings','nudetamer', '0')='1' then nudetamer.Checked:=true;
   if inifile.ReadString('settings','CheckBox1', '0')='1' then CheckBox1.Checked:=true;
   if inifile.ReadString('settings','CheckBox2', '0')='1' then CheckBox2.Checked:=true;
   if inifile.ReadString('settings','CheckBox3', '0')='1' then CheckBox3.Checked:=true;
@@ -527,10 +520,6 @@ IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\settings.ini');
   7: HD7.Checked:=true;
   8: HD8.Checked:=true;
   9: HD9.Checked:=true;
- end;
-  case strtoint(inifile.ReadString('settings','list', '0')) of
-  1: list1.Checked:=true;
-  2: list2.Checked:=true;
  end;
  case strtoint(inifile.ReadString('settings','SDtex', '0')) of
   1: SD1.Checked:=true;
@@ -586,7 +575,7 @@ var
   pos1: integer;
   name :string;
 begin
- memo2.Lines.LoadFromFile('patcher_resources\names.txt');
+ memo2.Lines.LoadFromFile('Files\names.txt');
 
    if FindFirst('Patch\*.dds',faAnyFile,SR) = 0 then
   repeat
@@ -651,67 +640,51 @@ Rawdata, state1,state2: string;
 Http  : TidHttp;
 URL,HashString : String;
 begin
-
+ button2.Hide;
+ Memo1.SetFocus;
+ pagecontrol1.Pages[0].Enabled:=false;
+ pagecontrol1.Pages[1].Enabled:=false;
+ pagecontrol1.Pages[2].Enabled:=false;
+ pagecontrol1.Pages[3].Enabled:=false;
  memo1.Lines.Add('извлечение пакетов');
- ExtractRes('data', 'names',ExtractFilePath(Application.ExeName) +  '\patcher_resources\names.txt');
- ExtractRes('EXEFILE', 'injector',ExtractFilePath(Application.ExeName) +  '\injector.exe');
- if list1.Checked=true then ExtractRes('data', 'modlist',ExtractFilePath(Application.ExeName) +  '\Files\modlist.ini');
- if list2.Checked=true then ExtractRes('data', 'modlist2',ExtractFilePath(Application.ExeName) +  '\Files\modlist.ini');
+ ExtractRes('data', 'names',ExtractFilePath(Application.ExeName) +  '\Files\names.txt');
+ ExtractRes('data', 'missing',GameFolder +'\live\Paz\patcher_resources\names.txt');
+ ExtractRes('EXEFILE', 'injector',GameFolder +'\live\Paz\injector.exe');
+ ExtractRes('data', 'modlist',ExtractFilePath(Application.ExeName) +  '\Files\modlist.ini');
  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
- if FileExists('patcher_resources\hashes.txt') then  memo1.Lines.Add('проверка хешей')
-else  begin
- memo1.Lines.Add('загрузка хешей');
- memo1.Lines.Add('(может показатся что зависло, но так задуманно)');
- Http := TIdHTTP.Create(nil);
- Http.HandleRedirects := true;
-memo1.Lines.Add('загрузка хеша. 1\2');
- Http := TIdHTTP.Create(nil);
- Http.HandleRedirects := true;
- Http.Request.UserAgent :='Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0';
- URL:= 'https://raw.githubusercontent.com/Socolcol/Splitter/master/HASH1.txt';
- HashString:=http.Get(URL);
-memo2.Lines.Add(HashString);
-memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '....ок';
-memo1.Lines.Add('загрузка хеша. 2\2');
- Http.Request.UserAgent :='Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0';
- URL:= 'https://raw.githubusercontent.com/Socolcol/Splitter/master/HASH2.txt';
- HashString:=http.Get(URL);
-memo2.Lines.Add(HashString);
-memo2.Lines.SaveToFile('patcher_resources\hashes.txt');
-IdHTTP1.Free;
-memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '....ок';
-end;
 
  if checkbox8.Checked=false then begin
  memo1.Lines.Add('удаление прошлых модов');
  try
- ForceDirectories(GameFolder +'\live\gamecommondata\');
- ForceDirectories(GameFolder +'\live\character\');
- TDirectory.Delete(ExtractFilePath(Application.ExeName) + '\files_to_patch\', True);
- TDirectory.Delete(ExtractFilePath(Application.ExeName) + '\Patch\', True);
-  TDirectory.Delete(GameFolder + '\live\character\', True);
-  TDirectory.Delete(GameFolder + '\live\gamecommondata\', True);
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\Patch\pac');
+ ForceDirectories(GameFolder +'\live\gamecommondata\');   memo1.Lines.Add('2');
+ ForceDirectories(GameFolder +'\live\character\');    memo1.Lines.Add('2');
+ TDirectory.Delete(GameFolder +'\live\Paz\files_to_patch\', True);  memo1.Lines.Add('2');
+ TDirectory.Delete(ExtractFilePath(Application.ExeName) + '\Patch\', True);   memo1.Lines.Add('2');
+  TDirectory.Delete(GameFolder + '\live\character\', True);  memo1.Lines.Add('2');
+  TDirectory.Delete(GameFolder + '\live\gamecommondata\', True);   memo1.Lines.Add('2');
+ ForceDirectories(ExtractFilePath(Application.ExeName) + '\Patch\pac');   memo1.Lines.Add('2');
  finally
+ memo1.SelAttributes.Color:=clgreen;
  memo1.Lines.Add('файлы удалены.');
  end;
  end;
  CreateDir('Patch');
  ForceDirectories(GameFolder +'\live\gamecommondata\');
  ForceDirectories(GameFolder +'\live\character\');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\texture');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pbw');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\phw');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pew');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pww');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pkww');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pvw');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pnw');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\phm');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pgm');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pkm');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pwm');
- ForceDirectories(ExtractFilePath(Application.ExeName) + '\files_to_patch\character\pnm');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\texture');     memo1.Lines.Add('3');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\stringtable\ru'); memo1.Lines.Add('4');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pbw');  memo1.Lines.Add('5');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\phw');  memo1.Lines.Add('6');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pew');   memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pww');   memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pkww');  memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pvw');   memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pnw');   memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\phm');    memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pgm');    memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pkm');   memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pwm');    memo1.Lines.Add('файлы удалены.');
+ ForceDirectories(GameFolder +'\live\Paz\files_to_patch\character\pnm');    memo1.Lines.Add('файлы удалены.');
  ForceDirectories(ExtractFilePath(Application.ExeName) + '\Patch\pac');
  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
  memo1.Lines.Add('распаковка модов');
@@ -1067,8 +1040,6 @@ end;
    memo1.Lines.Add('загрузка текстур. 1\1');
    DownloadFile('https://github.com/Socolcol/Splitter/raw/master/texture/VladaGeims/3/phw_01_nude_0001.dds',ExtractFilePath(Application.ExeName) +  '\Patch\phw_01_nude_0001.dds');
   end;
-  if form4.nudetamer.Checked=true then
-   ExtractRes('data', 'tex81',ExtractFilePath(Application.ExeName) +  '\Patch\pbw_00_nude_0001.dds');
 
   memo1.Lines.Add('удаление частей брони');
   IniFile := TIniFile.Create(ExtractFileDir(ParamStr(0))+'\files\modlist.ini');
@@ -1258,8 +1229,27 @@ end;
   end;
   end;
  memo1.Lines.Add('переименовка текстур');
- TexturePars(nil);
- memo1.Lines.Add('установка пачта текстур');
+ if form4.checkbox31.checked=true then TexturePars(nil);
+  memo1.Lines.Add('установка пачта текстур 1');
+ if form4.underwear1.checked=true then begin
+  TexturesCount:=1;
+   texturesall:=strtoint(inifile.ReadString('ddspatch','files', '1'));
+   while TexturesCount <= texturesall do begin
+    if pos('dec.dds', inifile.ReadString('ddspatch','file'+inttostr(TexturesCount), '1'))>0 then
+    ExtractRes('data', 'texture1',ExtractFilePath(Application.ExeName) +  'Patch\'+inifile.ReadString('ddspatch','file'+inttostr(TexturesCount), '1'))
+    else if pos('ao.dds', inifile.ReadString('ddspatch','file'+inttostr(TexturesCount), '1'))>0 then
+    ExtractRes('data', 'texture2',ExtractFilePath(Application.ExeName) +  'Patch\'+inifile.ReadString('ddspatch','file'+inttostr(TexturesCount), '1'))
+    else ExtractRes('data', 'texture0',ExtractFilePath(Application.ExeName) +  'Patch\'+inifile.ReadString('ddspatch','file'+inttostr(TexturesCount), '1'));
+    TexturesCount:=TexturesCount+1;
+    count2:=count2+1;
+    Application.ProcessMessages;
+    memo1.Lines.Add('('+inttostr(count2)+'\'+inttostr(count1)+') '+inifile.ReadString('ddspatch','file'+inttostr(TexturesCount), '1')+'.pac');
+  end;
+  memo1.SelAttributes.Color:=clgreen;
+  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
+ end else memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '....отменена';
+
+ memo1.Lines.Add('установка пачта текстур 2');
  if form4.checkbox9.checked=true then begin
   TexturesCount:=1;
    texturesall:=strtoint(inifile.ReadString('ddspatch','files', '1'));
@@ -1274,8 +1264,17 @@ end;
     Application.ProcessMessages;
     memo1.Lines.Add('('+inttostr(count2)+'\'+inttostr(count1)+') '+inifile.ReadString('ddspatch','file'+inttostr(TexturesCount), '1')+'.pac');
   end;
+  memo1.SelAttributes.Color:=clgreen;
   memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
  end else memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '....отменена';
+
+    if form4.checkbox32.checked=true then begin
+   memo1.Lines.Add('установка Английского языкового пакета');
+   ExtractRes('data', 'Eng1',ExtractFilePath(Application.ExeName) +  'Patch\stringtable_cutscene_ru.xlsm');
+   ExtractRes('data', 'Eng2',ExtractFilePath(Application.ExeName) +  'Patch\stringtable_ru.xlsm');
+   ExtractRes('data', 'Eng3',ExtractFilePath(Application.ExeName) +  'Patch\symbolnostringtable_ru.xlsm');
+    end;
+
 
   if form4.checkbox1.checked=true then begin
    memo1.Lines.Add('установка мода на грудь сорки');
@@ -1320,6 +1319,7 @@ end;
     Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_soc.xml');
     ForceDirectories(GameFolder +'\live\gamecommondata\customization\sorcerer');
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\sorcerer\customizationboneparamdesc_soc.xml');
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
   if form4.checkbox2.checked=true then begin
@@ -1365,6 +1365,7 @@ end;
     Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_val.xml');
     ForceDirectories(GameFolder +'\live\gamecommondata\customization\valkyrie');
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\valkyrie\customizationboneparamdesc_val.xml');
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
   if form4.checkbox3.checked=true then begin
@@ -1410,6 +1411,7 @@ end;
     Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_ran.xml');
     ForceDirectories(GameFolder +'\live\gamecommondata\customization\ranger');
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\ranger\customizationboneparamdesc_ran.xml');
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
   if form4.checkbox4.checked=true then begin
@@ -1455,6 +1457,7 @@ end;
     Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_wizw.xml');
     ForceDirectories(GameFolder +'\live\gamecommondata\customization\wizardwoman');
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\wizardwoman\customizationboneparamdesc_wizw.xml');
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
   if form4.checkbox5.checked=true then begin
@@ -1500,6 +1503,7 @@ end;
     Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_ninw.xml');
     ForceDirectories(GameFolder +'\live\gamecommondata\customization\ninjawoman');
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\ninjawoman\customizationboneparamdesc_ninw.xml');
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
   if form4.checkbox6.checked=true then begin
@@ -1544,6 +1548,7 @@ end;
     Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_bladewomentest.xml');
     ForceDirectories(GameFolder +'\live\gamecommondata\customization\bladewomentest');
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\bladewomentest\customizationboneparamdesc_bladewomentest.xml');
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
    if form4.checkbox6.checked=true then begin
@@ -1587,13 +1592,15 @@ end;
     Memo2.Lines.SaveToFile('Patch\customizationboneparamdesc_blawomen.xml');
     ForceDirectories(GameFolder +'\live\gamecommondata\customization\bladewomen');
     Memo2.Lines.SaveToFile(GameFolder +'\live\gamecommondata\customization\bladewomen\customizationboneparamdesc_blawomen.xml');
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
   end;
   memo1.Lines.Add('копирование текстур');
   if FindFirst('Patch\*.dds',faAnyFile,SR) = 0 then
   repeat
     memo1.Lines.Add(SR.name);
-    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\texture\'+SR.name)),False);
+    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\texture\'+SR.name)),False);
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
     Application.ProcessMessages;
    until FindNext(SR) <> 0;
@@ -1603,7 +1610,19 @@ end;
     if FindFirst('Patch\*.xml',faAnyFile,SR) = 0 then
   repeat
     memo1.Lines.Add(SR.name);
-    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\'+SR.name)),False);
+    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\'+SR.name)),False);
+    memo1.SelAttributes.Color:=clgreen;
+    memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
+    Application.ProcessMessages;
+  until FindNext(SR) <> 0;
+  FindClose(SR);
+
+ memo1.Lines.Add('копирование xlsm файлов');
+    if FindFirst('Patch\*.xlsm',faAnyFile,SR) = 0 then
+  repeat
+    memo1.Lines.Add(SR.name);
+    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\stringtable\ru\'+SR.name)),False);
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
     Application.ProcessMessages;
   until FindNext(SR) <> 0;
@@ -1614,112 +1633,66 @@ end;
   repeat
     memo1.Lines.Add(SR.name);
     if (pos('pbw', SR.Name)<>0) and (Checkbox17.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pbw\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pbw\'+SR.name)),False)
    else if (pos('phw', SR.Name)<>0) and (Checkbox16.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\phw\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\phw\'+SR.name)),False)
    else if (pos('pew', SR.Name)<>0) and (Checkbox15.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pew\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pew\'+SR.name)),False)
    else if (pos('pww', SR.Name)<>0) and (Checkbox20.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pww\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pww\'+SR.name)),False)
    else if (pos('pkww', SR.Name)<>0) and (Checkbox18.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pkww\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pkww\'+SR.name)),False)
    else if (pos('pvw', SR.Name)<>0) and (Checkbox19.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pvw\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pvw\'+SR.name)),False)
    else if (pos('pnw', SR.Name)<>0) and (Checkbox21.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pnw\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pnw\'+SR.name)),False)
    else if (pos('phm', SR.Name)<>0) and (Checkbox22.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\phm\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\phm\'+SR.name)),False)
    else if (pos('pgm', SR.Name)<>0) and (Checkbox23.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pgm\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pgm\'+SR.name)),False)
    else if (pos('pkm', SR.Name)<>0) and (Checkbox24.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pkm\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pkm\'+SR.name)),False)
    else if (pos('pwm', SR.Name)<>0) and (Checkbox25.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pwm\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pwm\'+SR.name)),False)
    else if (pos('pnm', SR.Name)<>0) and (Checkbox26.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( 'files_to_patch\character\pnm\'+SR.name)),False)
+     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString( GameFolder +'\live\Paz\files_to_patch\character\pnm\'+SR.name)),False)
    else memo1.Lines.Add('skip file');
+   memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
     Application.ProcessMessages;
   until FindNext(SR) <> 0;
   FindClose(SR);
 
  memo1.Lines.Add('копирование мета файла');
- CopyFile(PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),'pad00000.meta',False);
+ //CopyFile(PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),'pad00000.meta',False);
  CopyFile(PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),'files\pad00000.meta.ori',False);
+ memo1.SelAttributes.Color:=clgreen;
  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
  memo1.Lines.Add('запуск инжектора');
  Sleep(200);
- ShellExecute(Handle, 'open', 'injector.exe', nil, nil, SW_SHOW);
+ ShellExecute(Handle, 'open', PWideChar(WideString(GameFolder+ '\live\Paz\injector.exe')), nil, PWideChar(WideString(GameFolder+ '\live\Paz\')), SW_SHOW);
  Sleep(1000);
  while IsRunning('injector.exe') do begin end;
+ memo1.SelAttributes.Color:=clgreen;
  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
  memo1.Lines.Add('копирование мета файла');
- CopyFile('pad00000.meta','files\pad00000.meta.bak',False);
+ CopyFile(PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),'files\pad00000.meta.bak',False);
+ CopyFile('files\pad00000.meta.ori',PWideChar(WideString(GameFolder+ '\live\Paz\pad00000.meta')),False);
+ memo1.SelAttributes.Color:=clgreen;
  memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
- memo1.Lines.Add('копирование текстур в папку игры');
- ForceDirectories(GameFolder + '\live\character\texture');
- ForceDirectories(GameFolder + '\live\character\pbw');
- ForceDirectories(GameFolder + '\live\character\phw');
- ForceDirectories(GameFolder + '\live\character\pew');
- ForceDirectories(GameFolder + '\live\character\pww');
- ForceDirectories(GameFolder + '\live\character\pkww');
- ForceDirectories(GameFolder + '\live\character\pvw');
- ForceDirectories(GameFolder + '\live\character\pnw');
- ForceDirectories(GameFolder + '\live\character\phm');
- ForceDirectories(GameFolder + '\live\character\pgm');
- ForceDirectories(GameFolder + '\live\character\pkm');
- ForceDirectories(GameFolder + '\live\character\pwm');
- ForceDirectories(GameFolder + '\live\character\pnm');
-  if FindFirst('Patch\*.dds',faAnyFile,SR) = 0 then
+
+   memo1.Lines.Add('копирование xlsm в папку игры');
+    if FindFirst('Patch\*.xlsm',faAnyFile,SR) = 0 then
   repeat
     memo1.Lines.Add(SR.name);
-    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\texture\'+SR.name)),False);
+    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString(GameFolder + '\live\stringtable\ru\'+SR.name)),False);
+    memo1.SelAttributes.Color:=clgreen;
     memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
     Application.ProcessMessages;
   until FindNext(SR) <> 0;
   FindClose(SR);
- memo1.Lines.Add('копирование xml в папку игры');
-    if FindFirst('Patch\*.xml',faAnyFile,SR) = 0 then
-  repeat
-    memo1.Lines.Add(SR.name);
-    CopyFile(PWideChar(WideString('Patch\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\'+SR.name)),False);
-    memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
-    Application.ProcessMessages;
-  until FindNext(SR) <> 0;
-  FindClose(SR);
-   memo1.Lines.Add('копирование pac файлов в папку игры');
-    if FindFirst('Patch\pac\*.pac',faAnyFile,SR) = 0 then
-  repeat
-    memo1.Lines.Add(SR.name);
-    if (pos('pbw', SR.Name)<>0) and (Checkbox17.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pbw\'+SR.name)),False)
-   else if (pos('phw', SR.Name)<>0) and (Checkbox16.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\phw\'+SR.name)),False)
-   else if (pos('pew', SR.Name)<>0) and (Checkbox15.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pew\'+SR.name)),False)
-   else if (pos('pww', SR.Name)<>0) and (Checkbox20.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pww\'+SR.name)),False)
-   else if (pos('pkww', SR.Name)<>0) and (Checkbox18.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pkww\'+SR.name)),False)
-   else if (pos('pvw', SR.Name)<>0) and (Checkbox19.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pvw\'+SR.name)),False)
-   else if (pos('pnw', SR.Name)<>0) and (Checkbox21.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pnw\'+SR.name)),False)
-   else if (pos('phm', SR.Name)<>0) and (Checkbox22.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\phm\'+SR.name)),False)
-   else if (pos('pgm', SR.Name)<>0) and (Checkbox23.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pgm\'+SR.name)),False)
-   else if (pos('pkm', SR.Name)<>0) and (Checkbox24.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pkm\'+SR.name)),False)
-   else if (pos('pwm', SR.Name)<>0) and (Checkbox25.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pwm\'+SR.name)),False)
-   else if (pos('pnm', SR.Name)<>0) and (Checkbox26.Checked = true) then
-     CopyFile(PWideChar(WideString('Patch\pac\'+SR.name)),PWideChar(WideString(GameFolder +'\live\character\pnm\'+SR.name)),False)
-   else memo1.Lines.Add('skip file');
-    memo1.lines[memo1.lines.count-1] := memo1.lines[memo1.lines.count-1] + '.........ок';
-    Application.ProcessMessages;
-  until FindNext(SR) <> 0;
-  FindClose(SR);
+
+  memo1.SelAttributes.Color:=clgreen;
  memo1.Lines.Add('патч завершен. перезапустите сплиттер.');
 end;
 

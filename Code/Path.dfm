@@ -20,7 +20,7 @@ object Form4: TForm4
     Top = 0
     Width = 800
     Height = 415
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -410,36 +410,14 @@ object Form4: TForm4
           TabOrder = 4
         end
       end
-      object GroupBox13: TGroupBox
-        Left = 3
-        Top = 155
-        Width = 786
-        Height = 41
-        Caption = #1083#1080#1089#1090' '#1084#1086#1076#1086#1074
-        TabOrder = 10
-        object list1: TRadioButton
-          Left = 11
-          Top = 21
-          Width = 272
-          Height = 17
-          Caption = #1083#1080#1089#1090' 1 ('#1089#1090#1072#1088#1099#1081', '#1090#1086#1083#1100#1082#1086' '#1078#1077#1085#1089#1082#1080#1077' '#1087#1077#1088#1089#1099')'
-          Checked = True
-          TabOrder = 0
-          TabStop = True
-        end
-        object list2: TRadioButton
-          Left = 297
-          Top = 21
-          Width = 160
-          Height = 17
-          Caption = #1083#1080#1089#1090' 2 ('#1085#1086#1074#1099#1081', '#1086#1073#1072' '#1087#1086#1083#1072')'
-          TabOrder = 1
-        end
-      end
     end
     object TabSheet2: TTabSheet
       Caption = #1090#1077#1082#1089#1090#1091#1088#1099' '#1090#1077#1083
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox7: TGroupBox
         Left = 3
         Top = 3
@@ -508,21 +486,13 @@ object Form4: TForm4
           TabOrder = 4
           OnClick = nude1Click
         end
-        object nudetamer: TCheckBox
-          Left = 249
-          Top = 62
-          Width = 113
-          Height = 17
-          Caption = #1058#1072#1084#1077#1088' 2048*2048'
-          TabOrder = 5
-        end
         object nude5: TRadioButton
           Left = 130
           Top = 39
           Width = 113
           Height = 17
           Caption = 'Joku'#39's'
-          TabOrder = 6
+          TabOrder = 5
           OnClick = nude1Click
         end
         object nude7: TRadioButton
@@ -531,7 +501,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'Eyenight'#39's'
-          TabOrder = 7
+          TabOrder = 6
           OnClick = nude1Click
         end
         object nude8: TRadioButton
@@ -540,7 +510,7 @@ object Form4: TForm4
           Width = 232
           Height = 17
           Caption = #1087#1086#1083#1086#1078#1080#1083'('#1072') '#1089#1074#1086#1080' '#1090#1077#1082#1089#1090#1091#1088#1082#1080' '#1074' '#1087#1072#1087#1082#1091' Patch'
-          TabOrder = 8
+          TabOrder = 7
           OnClick = nude8Click
         end
         object nude9: TRadioButton
@@ -549,7 +519,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'Areola'
-          TabOrder = 9
+          TabOrder = 8
           OnClick = nude1Click
         end
         object HD1: TRadioButton
@@ -558,7 +528,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'full_bush'
-          TabOrder = 10
+          TabOrder = 9
           OnClick = HD1Click
         end
         object HD2: TRadioButton
@@ -567,7 +537,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'medium_bush'
-          TabOrder = 11
+          TabOrder = 10
           OnClick = HD2Click
         end
         object HD4: TRadioButton
@@ -576,7 +546,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'small_bush'
-          TabOrder = 12
+          TabOrder = 11
           OnClick = HD4Click
         end
         object HD7: TRadioButton
@@ -585,7 +555,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'trimmed'
-          TabOrder = 13
+          TabOrder = 12
           OnClick = HD7Click
         end
         object HD5: TRadioButton
@@ -594,7 +564,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'small_bush_2'
-          TabOrder = 14
+          TabOrder = 13
           OnClick = HD5Click
         end
         object HD8: TRadioButton
@@ -603,7 +573,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'wide_landing_strip'
-          TabOrder = 15
+          TabOrder = 14
           OnClick = HD8Click
         end
         object HD3: TRadioButton
@@ -612,7 +582,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'medium_bush2'
-          TabOrder = 16
+          TabOrder = 15
           OnClick = HD3Click
         end
         object HD6: TRadioButton
@@ -621,7 +591,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'thin_landing_strip'
-          TabOrder = 17
+          TabOrder = 16
           OnClick = HD6Click
         end
         object HD9: TRadioButton
@@ -630,7 +600,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'wider_trimmed'
-          TabOrder = 18
+          TabOrder = 17
           OnClick = HD9Click
         end
         object SD1: TRadioButton
@@ -639,7 +609,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'full_bush'
-          TabOrder = 19
+          TabOrder = 18
           OnClick = HD1Click
         end
         object SD2: TRadioButton
@@ -648,7 +618,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'medium_bush'
-          TabOrder = 20
+          TabOrder = 19
           OnClick = HD2Click
         end
         object SD3: TRadioButton
@@ -657,7 +627,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'medium_bush2'
-          TabOrder = 21
+          TabOrder = 20
           OnClick = HD3Click
         end
         object SD4: TRadioButton
@@ -666,7 +636,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'small_bush'
-          TabOrder = 22
+          TabOrder = 21
           OnClick = HD4Click
         end
         object SD5: TRadioButton
@@ -675,7 +645,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'small_bush_2'
-          TabOrder = 23
+          TabOrder = 22
           OnClick = HD5Click
         end
         object SD6: TRadioButton
@@ -684,7 +654,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'thin_landing_strip'
-          TabOrder = 24
+          TabOrder = 23
           OnClick = HD6Click
         end
         object SD7: TRadioButton
@@ -693,7 +663,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'trimmed'
-          TabOrder = 25
+          TabOrder = 24
           OnClick = HD7Click
         end
         object SD8: TRadioButton
@@ -702,7 +672,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'wide_landing_strip'
-          TabOrder = 26
+          TabOrder = 25
           OnClick = HD8Click
         end
         object SD9: TRadioButton
@@ -711,7 +681,7 @@ object Form4: TForm4
           Width = 113
           Height = 17
           Caption = 'wider_trimmed'
-          TabOrder = 27
+          TabOrder = 26
           OnClick = HD9Click
         end
       end
@@ -734,9 +704,13 @@ object Form4: TForm4
     object TabSheet3: TTabSheet
       Caption = #1084#1086#1076#1099
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object CheckBox9: TCheckBox
-        Left = 11
-        Top = 63
+        Left = 19
+        Top = 86
         Width = 214
         Height = 17
         Caption = #1089#1085#1103#1090#1100' '#1073#1077#1083#1100#1080#1096#1082#1086' '#1086#1089#1090#1072#1074#1080#1074' '#1095#1091#1083#1086#1095#1082#1080
@@ -750,7 +724,7 @@ object Form4: TForm4
         Caption = #1084#1086#1076' (. Y .) --> ( o )( o )'
         TabOrder = 1
         object Label1: TLabel
-          Left = 11
+          Left = 19
           Top = 136
           Width = 121
           Height = 13
@@ -919,39 +893,39 @@ object Form4: TForm4
       end
       object CheckBox8: TCheckBox
         Left = 3
-        Top = 16
+        Top = 17
         Width = 294
         Height = 17
         Caption = #1085#1077' '#1086#1095#1080#1097#1072#1090#1100' '#1087#1072#1087#1082#1091' Patch ('#1077#1089#1083#1080' '#1087#1086#1089#1090#1072#1074#1080#1083#1080' '#1089#1074#1086#1080' '#1084#1086#1076#1099')'
         TabOrder = 2
       end
       object CheckBox10: TCheckBox
-        Left = 11
-        Top = 86
+        Left = 19
+        Top = 109
         Width = 190
         Height = 17
         Caption = #1089#1076#1077#1083#1072#1090#1100' '#1087#1088#1086#1079#1088#1072#1095#1085#1099#1084' '#1054#1088#1077#1085
         TabOrder = 3
       end
       object CheckBox11: TCheckBox
-        Left = 11
-        Top = 109
+        Left = 19
+        Top = 132
         Width = 198
         Height = 17
         Caption = #1089#1076#1077#1083#1072#1090#1100' '#1086#1095#1077#1085#1100' '#1087#1088#1086#1079#1088#1072#1095#1085#1099#1084' '#1054#1088#1077#1085
         TabOrder = 4
       end
       object CheckBox12: TCheckBox
-        Left = 11
-        Top = 132
+        Left = 19
+        Top = 155
         Width = 214
         Height = 17
         Caption = #1089#1085#1103#1090#1100' '#1082#1088#1099#1083#1100#1103' '#1089' '#1054#1088#1077#1085
         TabOrder = 5
       end
       object CheckBox13: TCheckBox
-        Left = 11
-        Top = 155
+        Left = 19
+        Top = 178
         Width = 190
         Height = 17
         Caption = #1086#1089#1090#1072#1074#1080#1090#1100' '#1090#1086#1083#1100#1082#1086' '#1082#1088#1099#1083#1100#1103
@@ -959,16 +933,36 @@ object Form4: TForm4
       end
       object CheckBox14: TCheckBox
         Left = 3
-        Top = 40
+        Top = 63
         Width = 358
         Height = 17
         Caption = #1074#1082#1083#1102#1095#1080#1090#1100' '#1074' '#1087#1072#1090#1095' partcutdesc.xml ('#1085#1077' '#1079#1085#1072#1077#1096#1100' '#1095#1090#1086' '#1101#1090#1086', '#1085#1077' '#1090#1088#1086#1075#1072#1081'!)'
         TabOrder = 7
       end
+      object CheckBox31: TCheckBox
+        Left = 3
+        Top = 40
+        Width = 358
+        Height = 17
+        Caption = #1087#1077#1088#1077#1080#1084#1077#1085#1086#1074#1072#1090#1100' '#1090#1077#1082#1089#1090#1091#1088#1099' '#1074#1080#1076#1072' 1418251599.dds'
+        TabOrder = 8
+      end
+      object CheckBox32: TCheckBox
+        Left = 19
+        Top = 201
+        Width = 342
+        Height = 17
+        Caption = #1080#1079#1084#1077#1085#1080#1090#1100' '#1103#1079#1099#1082' '#1085#1072' '#1040#1085#1075#1083#1080#1081#1089#1082#1080#1081
+        TabOrder = 9
+      end
     end
     object TabSheet5: TTabSheet
       Caption = #1084#1086#1076#1099' '#1086#1090' VladaGeims'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label11: TLabel
         Left = 11
         Top = 13
@@ -1030,6 +1024,10 @@ object Form4: TForm4
     object TabSheet4: TTabSheet
       Caption = #1091#1089#1090#1072#1085#1086#1074#1082#1072
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Memo2: TMemo
         Left = 0
         Top = 340
@@ -1042,10 +1040,10 @@ object Form4: TForm4
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 1
         Visible = False
       end
-      object Memo1: TMemo
+      object memo1: TRichEdit
         Left = 0
         Top = 0
         Width = 792
@@ -1055,9 +1053,11 @@ object Form4: TForm4
         Font.Color = clWindowText
         Font.Height = -11
         Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
+        Font.Style = []
         ParentFont = False
-        TabOrder = 0
+        ReadOnly = True
+        TabOrder = 2
+        Zoom = 100
       end
       object Button2: TButton
         Left = 672
@@ -1065,7 +1065,7 @@ object Form4: TForm4
         Width = 117
         Height = 25
         Caption = #1085#1072#1095#1072#1090#1100' '#1087#1072#1090#1095
-        TabOrder = 1
+        TabOrder = 0
         OnClick = Button2Click
       end
     end

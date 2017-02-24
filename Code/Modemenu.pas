@@ -383,7 +383,7 @@ var
 implementation
 
 {$R *.dfm}
-{$R data.RES}
+{$R DataRes.RES}
 
 function Pars(T_, ForS, _T: string): string;
 var

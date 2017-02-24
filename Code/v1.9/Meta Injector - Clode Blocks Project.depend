@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1487782636 source:c:\users\roman\desktop\v1.9\src\data_types.c
+	"../include/data_types.h"
+
+1487782636 c:\users\roman\desktop\v1.9\include\data_types.h
+	<stdio.h>
+	<stdlib.h>
+
+1487782636 source:c:\users\roman\desktop\v1.9\src\file_operations.c
+	"../include/file_operations.h"
+
+1487782636 c:\users\roman\desktop\v1.9\include\file_operations.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<dirent.h>
+	<sys/stat.h>
+	"../include/data_types.h"
+	"../include/global.h"
+	"../include/utilities.h"
+
+1487782636 c:\users\roman\desktop\v1.9\include\global.h
+	<stdlib.h>
+	<stdio.h>
+	"../include/data_types.h"
+
+1487782636 c:\users\roman\desktop\v1.9\include\utilities.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<windows.h>
+	<conio.h>
+	"../include/data_types.h"
+	"../include/file_operations.h"
+	"../include/meta_explorer.h"
+
+1487782636 c:\users\roman\desktop\v1.9\include\meta_explorer.h
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	"../include/ice.h"
+	"../include/global.h"
+	"../include/utilities.h"
+	"../include/file_operations.h"
+
+1487782636 c:\users\roman\desktop\v1.9\include\ice.h
+
+1487782636 source:c:\users\roman\desktop\v1.9\src\global.c
+	"../include/global.h"
+
+1487782636 source:c:\users\roman\desktop\v1.9\src\ice.c
+	"../include/ice.h"
+	<stdio.h>
+	<stdlib.h>
+
+1487783329 source:c:\users\roman\desktop\v1.9\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	"../include/utilities.h"
+	"../include/patcher.h"
+
+1487782636 c:\users\roman\desktop\v1.9\include\patcher.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../include/global.h"
+	"../include/utilities.h"
+	"../include/file_operations.h"
+	"../include/meta_explorer.h"
+
+1487782636 source:c:\users\roman\desktop\v1.9\src\meta_explorer.c
+	"../include/meta_explorer.h"
+
+1487782637 source:c:\users\roman\desktop\v1.9\src\patcher.c
+	"../include/patcher.h"
+

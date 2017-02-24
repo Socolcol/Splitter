@@ -47,11 +47,11 @@ object Form2: TForm2
     OnMouseLeave = Label2MouseLeave
   end
   object Label3: TLabel
-    Left = 489
+    Left = 452
     Top = 381
-    Width = 39
+    Width = 51
     Height = 13
-    Caption = 'Ver. 2.6'
+    Caption = 'Ver. 2.017'
   end
   object Label4: TLabel
     Left = 8

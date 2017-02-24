@@ -1,5 +1,9 @@
 ﻿program Splitter;
 
+
+
+{$R *.dres}
+
 uses
   Vcl.Forms,
   Windows,

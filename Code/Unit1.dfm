@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'BDO file splitter'
+  Caption = 'calc'
   ClientHeight = 227
   ClientWidth = 574
   Color = clBtnFace
@@ -17,24 +17,6 @@ object Form1: TForm1
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Memo1: TMemo
-    Left = 0
-    Top = 0
-    Width = 574
-    Height = 192
-    Align = alClient
-    Color = clWhite
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    ReadOnly = True
-    ScrollBars = ssVertical
-    TabOrder = 0
-    OnKeyDown = Memo1KeyDown
-  end
   object Memo2: TMemo
     Left = 0
     Top = 192
@@ -47,12 +29,29 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     Visible = False
+  end
+  object RichEdit1: TRichEdit
+    Left = 0
+    Top = 0
+    Width = 574
+    Height = 192
+    Align = alClient
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 1
+    Zoom = 100
   end
   object Timer1: TTimer
     Enabled = False
-    Interval = 350
+    Interval = 10
     OnTimer = Timer1Timer
     Left = 392
     Top = 24
@@ -321,6 +320,28 @@ object Form1: TForm1
         Caption = #1079#1072#1082#1088#1099#1090#1100' '#1080#1075#1088#1091
         OnClick = N10Click
       end
+      object language1: TMenuItem
+        Caption = #1103#1079#1099#1082'\language'
+        object English1: TMenuItem
+          Caption = 'English'
+          OnClick = English1Click
+        end
+        object N11: TMenuItem
+          Caption = #1056#1091#1089#1089#1082#1080#1081
+          OnClick = N11Click
+        end
+      end
+      object N12: TMenuItem
+        Caption = #1074#1088#1077#1084#1103' '#1086#1078#1080#1076#1072#1085#1080#1103
+        object N101: TMenuItem
+          Caption = '-10 '#1089#1077#1082
+          OnClick = N101Click
+        end
+        object N102: TMenuItem
+          Caption = '+10 '#1089#1077#1082
+          OnClick = N102Click
+        end
+      end
     end
     object N6: TMenuItem
       Caption = #1086' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
@@ -351,6 +372,10 @@ object Form1: TForm1
     Request.Ranges = <>
     HTTPOptions = [hoForceEncodeParams]
     Left = 328
+    Top = 72
+  end
+  object XPManifest1: TXPManifest
+    Left = 264
     Top = 72
   end
   object IdAntiFreeze1: TIdAntiFreeze
